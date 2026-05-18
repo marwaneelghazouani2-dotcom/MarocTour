@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouarzazate | La Porte du Désert</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (pour les icônes d'étoiles) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Styles Personnalisés */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #faf6f0; /* Couleur sable clair */
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-weight: 700;
+            color: #d35400 !important; /* Orange terre cuite / ocre */
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ksar_of_Ait-Ben-Haddou%2C_Ouarzazate%2C_Morocco.jpg/1200px-Ksar_of_Ait-Ben-Haddou%2C_Ouarzazate%2C_Morocco.jpg') center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Section Présentation */
+        .intro-section {
+            background-color: white;
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-top: -50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Cartes d'information (Lieux, Hôtels, Restos) */
+        .info-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            background: white;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            color: #d35400; /* Ocre */
+            font-weight: 700;
+        }
+
+        .stars {
+            color: #f1c40f; /* Or pour les étoiles */
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Bouton dynamique */
+        .btn-custom {
+            background-color: #d35400;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #a04000;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">VISITEZ OUARZAZATE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#lieux">Lieux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hotels">Hôtels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tourisme-maroc.html">Retour au Maroc</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Ouarzazate</h1>
+            <p class="hero-subtitle">La Porte du Désert et le Hollywood de l'Afrique</p>
+            <a href="#lieux" class="btn btn-custom btn-lg">Découvrir la ville</a>
+        </div>
+    </section>
+
+    <!-- Section Présentation -->
+    <section class="container">
+        <div class="intro-section px-4 px-md-5">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h2 class="fw-bold mb-4" style="color: #d35400;">Une oasis au pied de l'Atlas</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        <strong>Ouarzazate</strong> est une ville du sud du Maroc, célèbre pour ses paysages arides époustouflants, ses kasbahs majestueuses et sa lumière exceptionnelle. Perchée à <strong>1 150 mètres d'altitude</strong>, c'est le point de départ idéal pour explorer le grand sud marocain.
+                    </p>
+                </div>
+                <div class="col-md-5 text-center mt-4 mt-md-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Ouarzazate_-_panoramio_%283%29.jpg/800px-Ouarzazate_-_panoramio_%283%29.jpg" alt="Vue de Ouarzazate" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Lieux Incontournables -->
+    <section id="lieux" class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #d35400;">Lieux Incontournables</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #2c3e50;"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Kasbah_Taourirt_Ouarzazate_Morocco.jpg/800px-Kasbah_Taourirt_Ouarzazate_Morocco.jpg" class="card-img-top" alt="Kasbah de Taourirt">
+                    <div class="card-body">
+                        <h4 class="card-title">La Kasbah de Taourirt</h4>
+                        <p class="card-text">Symbole de la ville, cette kasbah adjacente à la médina est un chef-d'œuvre de l'architecture berbère en pisé.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Atlas_Corporation_Studios.jpg/800px-Atlas_Corporation_Studios.jpg" class="card-img-top" alt="Studios Atlas">
+                    <div class="card-body">
+                        <h4 class="card-title">Studios Atlas (Le Hollywood d'Afrique)</h4>
+                        <p class="card-text">Promenez-vous dans les décors de superproductions comme Gladiator, Astérix et Obélix ou Game of Thrones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Hôtels -->
+    <section id="hotels" class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #d35400;">Où dormir ? Les Grands Hôtels</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #2c3e50;"></div>
+            <p class="text-muted mt-3">Des établissements de prestige qui ont accueilli les plus grandes stars d'Hollywood.</p>
+        </div>
+
+        <div class="row">
+            <!-- Berbère Palace -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Berbère Palace">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">Le Berbère Palace</h4>
+                        <p class="card-text">L'hôtel le plus luxueux et le plus célèbre d'Ouarzazate. Son architecture rappelle un Ksar traditionnel. C'est le lieu de résidence favori des acteurs et réalisateurs internationaux lors de leurs tournages dans la région.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Oscar -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Hotel Oscar">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">Hôtel Oscar by Atlas Studios</h4>
+                        <p class="card-text">Situé juste à côté des mythiques Studios Atlas, cet hôtel vous plonge dans l'univers du 7ème art. Les chambres sont thématiques et décorées avec de véritables accessoires de films.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kenzi Azghor -->
+            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Kenzi Azghor">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">Kenzi Azghor</h4>
+                        <p class="card-text">Dominant la vallée et offrant une vue panoramique imprenable sur la ville et les montagnes de l'Atlas, cet établissement offre des jardins verdoyants et une atmosphère très apaisante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Restaurants -->
+    <section id="restaurants" class="container mt-5 pt-4 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #d35400;">Où manger ? Gastronomie Locale</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #2c3e50;"></div>
+            <p class="text-muted mt-3">Découvrez les saveurs du Sud marocain dans les meilleures tables de la ville.</p>
+        </div>
+
+        <div class="row">
+            <!-- La Kasbah des Sables -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="La Kasbah des Sables">
+                    <div class="card-body">
+                        <h4 class="card-title">La Kasbah des Sables</h4>
+                        <p class="card-text">Considéré comme l'un des meilleurs restaurants d'Ouarzazate. Le cadre est magique, avec une décoration somptueuse digne des mille et une nuits. On y déguste une gastronomie marocaine raffinée (tagines, pastillas, couscous).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Douyria -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Restaurant Douyria">
+                    <div class="card-body">
+                        <h4 class="card-title">Restaurant Douyria</h4>
+                        <p class="card-text">Situé en plein centre-ville, ce restaurant en rooftop offre une excellente vue. Le menu propose une fusion délicieuse entre plats marocains traditionnels et quelques touches internationales, le tout dans une ambiance chaleureuse.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chez Dimitri -->
+            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Chez Dimitri">
+                    <div class="card-body">
+                        <h4 class="card-title">Chez Dimitri</h4>
+                        <p class="card-text">Une véritable institution historique ouverte depuis 1928 ! Ce restaurant servait autrefois de repaire pour les soldats de la Légion Étrangère. On y trouve aujourd'hui de délicieux plats méditerranéens et européens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <h4 class="mb-3">Ouarzazate, l'expérience du grand Sud</h4>
+            <p>&copy; 2026 Tourisme Ouarzazate. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS pour le défilement fluide -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrez le Maroc | Tourisme</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Styles Personnalisés */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-weight: 700;
+            color: #c8102e !important; /* Rouge drapeau marocain */
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1539020140153-e479b8c22e70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Cartes de Destinations */
+        .destination-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .destination-card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            position: relative;
+            background: white;
+            z-index: 1;
+        }
+
+        .card-title {
+            color: #006233; /* Vert drapeau marocain */
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Bouton dynamique */
+        .btn-custom {
+            background-color: #c8102e;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #006233;
+            color: white;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">MAROC MAGIQUE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Voyagez au Cœur du Maroc</h1>
+            <p class="hero-subtitle">De la Méditerranée aux dunes du Sahara, découvrez un royaume aux mille couleurs.</p>
+            <a href="#destinations" class="btn btn-custom btn-lg">Explorer les Villes</a>
+        </div>
+    </section>
+
+    <section id="destinations" class="container mt-5 pt-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold" style="color: #c8102e;">Nos Destinations Incontournables</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 80px; background-color: #006233;"></div>
+            <p class="text-muted mt-3">Un voyage du Nord au Sud, entre histoire, culture et nature.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Tanger', 'La porte de l\'Afrique. Profitez de la médina, des grottes d\'Hercule et du Cap Spartel.')">
+                    <img src="https://images.unsplash.com/photo-1577186178309-80b6a22f7cc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Tanger">
+                    <div class="card-body">
+                        <h5 class="card-title">Tanger</h5>
+                        <p class="card-text">La Mariée du Nord, ville cosmopolite où se rencontrent la Méditerranée et l'Atlantique.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Tétouan', 'Une médina classée à l\'UNESCO avec une architecture hispano-mauresque unique.')">
+                    <img src="https://images.unsplash.com/photo-1587135991058-005db37a85ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Tétouan">
+                    <div class="card-body">
+                        <h5 class="card-title">Tétouan</h5>
+                        <p class="card-text">La Colombe Blanche. Une ville à l'influence andalouse profonde, nichée au creux des montagnes du Rif.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Chefchaouen', 'Perdez-vous dans ses ruelles bleues et profitez de l\'air frais des montagnes.')">
+                    <img src="https://images.unsplash.com/photo-1552074284-5e88ef1aef18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Chefchaouen">
+                    <div class="card-body">
+                        <h5 class="card-title">Chefchaouen</h5>
+                        <p class="card-text">La Perle Bleue du Maroc. Célèbre dans le monde entier pour les façades bleutées de sa médina.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Rabat & Salé', 'Visitez la Tour Hassan, les Oudayas et traversez le Bouregreg pour découvrir la médina de Salé.')">
+                    <img src="https://images.unsplash.com/photo-1597818446214-411a768c7847?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Rabat">
+                    <div class="card-body">
+                        <h5 class="card-title">Rabat / Salé</h5>
+                        <p class="card-text">Villes jumelles séparées par le fleuve Bouregreg. Rabat, capitale lumière et historique du Royaume.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Casablanca', 'Ne manquez pas l\'imposante Mosquée Hassan II et la corniche d\'Ain Diab.')">
+                    <img src="https://images.unsplash.com/photo-1579007424168-52824dafa3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Casablanca">
+                    <div class="card-body">
+                        <h5 class="card-title">Casablanca</h5>
+                        <p class="card-text">Le poumon économique du Maroc, avec son architecture Art Déco et la majestueuse Mosquée Hassan II.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Marrakech', 'La place Jemaa el-Fna, les souks, et le Jardin Majorelle vous attendent.')">
+                    <img src="https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Marrakech">
+                    <div class="card-body">
+                        <h5 class="card-title">Marrakech</h5>
+                        <p class="card-text">La Ville Ocre. Une effervescence unique entre ses souks, ses palais historiques et ses jardins luxuriants.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Agadir', 'La plus belle baie du Maroc, idéale pour le farniente et les sports nautiques.')">
+                    <img src="https://images.unsplash.com/photo-1621217646193-47137f8842da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Agadir">
+                    <div class="card-body">
+                        <h5 class="card-title">Agadir</h5>
+                        <p class="card-text">La Capitale du Souss. Une station balnéaire moderne offrant 300 jours de soleil par an et une immense plage.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Guelmim', 'Visitez le célèbre marché aux chameaux (Amhayrich) et découvrez les oasis environnantes.')">
+                    <img src="https://images.unsplash.com/photo-1543881473-cb19bb782806?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Guelmim">
+                    <div class="card-body">
+                        <h5 class="card-title">Guelmim</h5>
+                        <p class="card-text">La Porte du Sahara. Célèbre pour ses oasis chaleureuses et son authentique marché aux dromadaires.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="card destination-card" onclick="showInfo('Laâyoune', 'Découvrez la place du Méchouar et la grande mosquée de Moulay Abdelaziz.')">
+                    <img src="https://images.unsplash.com/photo-1580977239121-667793d489b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Laâyoune">
+                    <div class="card-body">
+                        <h5 class="card-title">Laâyoune</h5>
+                        <p class="card-text">La Capitale des Sables. Une métropole saharienne fascinante alliant modernité et traditions nomades.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mx-auto">
+                <div class="card destination-card" onclick="showInfo('Dakhla', 'Un paradis entre désert et océan, célèbre mondialement pour le Kitesurf et ses lagunes.')">
+                    <img src="https://images.unsplash.com/photo-1632832811347-1f486fb7a718?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Dakhla">
+                    <div class="card-body">
+                        <h5 class="card-title">Dakhla</h5>
+                        <p class="card-text">La perle du Sud. Un lagon exceptionnel où les dunes de sable blanc rencontrent les vagues de l'océan Atlantique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-white" style="background-color: #006233;">
+                    <h5 class="modal-title" id="modalCityName">Ville</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalCityDesc">
+                    Description de la ville.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-custom">Réserver un guide</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" class="container mt-5 pt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-5">
+                        <h3 class="text-center mb-4">Planifiez votre voyage</h3>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nom complet</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Adresse Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="destination" class="form-label">Destination favorite</label>
+                                <select class="form-select" id="destination">
+                                    <option>Tanger</option>
+                                    <option>Tétouan</option>
+                                    <option>Chefchaouen</option>
+                                    <option>Rabat / Salé</option>
+                                    <option>Casablanca</option>
+                                    <option>Marrakech</option>
+                                    <option>Agadir</option>
+                                    <option>Guelmim</option>
+                                    <option>Laâyoune</option>
+                                    <option>Dakhla</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Votre message</label>
+                                <textarea class="form-control" id="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2026 Maroc Magique Tourisme. Tous droits réservés.</p>
+            <p class="small text-muted">Créé avec HTML5, CSS3, JavaScript et Bootstrap 5.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Fonctionnalité pour afficher les infos des villes dans le modal Bootstrap
+        const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
+
+        function showInfo(city, description) {
+            document.getElementById('modalCityName').innerText = city;
+            document.getElementById('modalCityDesc').innerText = description;
+            infoModal.show();
+        }
+
+        // Gestion de la soumission du formulaire
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const dest = document.getElementById('destination').value;
+            
+            alert(`Merci ${name} ! Votre demande d'informations pour ${dest} a bien été envoyée. Nous vous contacterons très vite.`);
+            this.reset();
+        });
+
+        // Défilement doux (Smooth scrolling) pour les liens de la navbar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70, // Ajustement pour la navbar fixe
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

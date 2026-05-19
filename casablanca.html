@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casablanca | La Métropole Économique</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (pour les icônes d'étoiles) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Styles Personnalisés */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4; /* Gris très clair / blanc urbain */
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-weight: 700;
+            color: #212529 !important; /* Anthracite profond */
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            /* Image de la Mosquée Hassan II au coucher du soleil */
+            background: linear-gradient(rgba(33, 37, 41, 0.6), rgba(33, 37, 41, 0.8)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Hassan_II_Mosque_in_the_evening.jpg/1200px-Hassan_II_Mosque_in_the_evening.jpg') center/cover;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            animation: fadeInDown 1s ease-in-out;
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #C0A062; /* Doré chic */
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Section Présentation */
+        .intro-section {
+            background-color: white;
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-top: -50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Cartes d'information (Lieux, Hôtels, Restos) */
+        .info-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(192, 160, 98, 0.2);
+        }
+
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            color: #212529; /* Anthracite */
+            font-weight: 700;
+        }
+
+        .stars {
+            color: #C0A062; /* Doré */
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Bouton dynamique */
+        .btn-custom {
+            background-color: #C0A062; /* Doré */
+            color: white;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #a88a52;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111111; /* Noir / Gris très foncé */
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MAROC MAGIQUE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="villesDropdown" role="button" data-bs-toggle="dropdown">
+                            Changer de Ville
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="tanger.html">Tanger</a></li>
+                            <li><a class="dropdown-item" href="tetouan.html">Tétouan</a></li>
+                            <li><a class="dropdown-item" href="chefchaouen.html">Chefchaouen</a></li>
+                            <li><a class="dropdown-item" href="rabat.html">Rabat</a></li>
+                            <li><a class="dropdown-item" href="sale.html">Salé</a></li>
+                            <li><a class="dropdown-item" href="casablanca.html">Casablanca</a></li>
+                            <li><a class="dropdown-item" href="marrakech.html">Marrakech</a></li>
+                            <li><a class="dropdown-item" href="ouarzazate.html">Ouarzazate</a></li>
+                            <li><a class="dropdown-item" href="agadir.html">Agadir</a></li>
+                            <li><a class="dropdown-item" href="guelmim.html">Guelmim</a></li>
+                            <li><a class="dropdown-item" href="laayoune.html">Laâyoune</a></li>
+                            <li><a class="dropdown-item" href="dakhla.html">Dakhla</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#lieux">Lieux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hotels">Hôtels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Casablanca</h1>
+            <p class="hero-subtitle">La Ville Blanche, le Poumon Économique du Maroc</p>
+            <a href="#histoire" class="btn btn-custom btn-lg mt-3">Découvrir la métropole</a>
+        </div>
+    </section>
+
+    <!-- Section Présentation (Basée sur Wikipédia) -->
+    <section id="histoire" class="container">
+        <div class="intro-section px-4 px-md-5">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h2 class="fw-bold mb-4" style="color: #212529;">L'Énergie d'une Métropole Mondiale</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        <strong>Casablanca</strong> (en amazighe : ⴰⵏⴼⴰ, <em>Anfa</em>, et en arabe : الدار البيضاء, <em>Dar El Baïda</em>) est la plus grande ville du Maroc et la première métropole du Maghreb. Située sur la côte atlantique, elle est le cœur économique, industriel et financier du pays.
+                    </p>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Développée sur le site de l'antique cité d'Anfa, détruite puis reconstruite, elle a connu un essor fulgurant au XXe siècle sous le protectorat français, sous la direction du maréchal Lyautey et de l'architecte Henri Prost. Casablanca est aujourd'hui un véritable <strong>musée à ciel ouvert</strong>, reconnue mondialement pour son héritage architectural Art déco et néo-mauresque spectaculaire.
+                    </p>
+                </div>
+                <div class="col-md-5 text-center mt-4 mt-md-0">
+                    <img src="https://images.unsplash.com/photo-1579007424168-52824dafa3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Architecture de Casablanca" class="img-fluid rounded shadow">
+                    <p class="small text-muted mt-2">Harmonie entre tradition mauresque et modernité</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Lieux Incontournables -->
+    <section id="lieux" class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #212529;">Les Trésors de Casablanca</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #C0A062;"></div>
+            <p class="text-muted mt-3">L'alliance parfaite entre gigantisme contemporain et charme des années 30.</p>
+        </div>
+
+        <div class="row">
+            <!-- Mosquée Hassan II -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Hassan_II_Mosque%2C_Casablanca%2C_Morocco.jpg/800px-Hassan_II_Mosque%2C_Casablanca%2C_Morocco.jpg" class="card-img-top" alt="Mosquée Hassan II" onerror="this.src='https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <div class="card-body">
+                        <h4 class="card-title">Mosquée Hassan II</h4>
+                        <p class="card-text">L'un des plus grands et des plus beaux édifices religieux au monde. Érigée en partie sur les flots de l'océan Atlantique, elle possède un minaret culminant à 210 mètres (le deuxième plus haut du monde). Un chef-d'œuvre absolu de l'artisanat marocain, de la sculpture sur bois au zellige, ouvert aux visites non-musulmanes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quartier des Habous -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Mahkama_du_Pacha.jpg/800px-Mahkama_du_Pacha.jpg" class="card-img-top" alt="Quartier des Habous - Mahkama du Pacha">
+                    <div class="card-body">
+                        <h4 class="card-title">Le Quartier des Habous</h4>
+                        <p class="card-text">Surnommé la "nouvelle médina", ce quartier a été construit dans les années 1920 par les Français. C'est un modèle d'urbanisme mêlant règles hygiénistes modernes et architecture traditionnelle marocaine. On y trouve de magnifiques arcades, la célèbre Mahkama du Pacha et de nombreux artisans (cuivre, tapis, pâtisseries).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Place Mohammed V -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Wilaya_Casablanca.jpg/800px-Wilaya_Casablanca.jpg" class="card-img-top" alt="Place Mohammed V" onerror="this.src='https://images.unsplash.com/photo-1542314831-c6a4d14d837e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <div class="card-body">
+                        <h4 class="card-title">Place Mohammed V (Art Déco)</h4>
+                        <p class="card-text">Le cœur administratif de la ville et le joyau de l'architecture Art Déco casablancaise. La place est ceinturée de bâtiments grandioses des années 1930 : la Wilaya (Préfecture), le Palais de Justice, la Grande Poste et le Consulat de France, le tout entourant une grande fontaine lumineuse.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- La Corniche d'Ain Diab -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1621217646193-47137f8842da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Corniche de Casablanca">
+                    <div class="card-body">
+                        <h4 class="card-title">La Corniche d'Ain Diab</h4>
+                        <p class="card-text">Le lieu de détente favori des Casablancais. Ce long boulevard qui longe l'océan Atlantique est bordé de plages, de beach clubs exclusifs, de cinémas, de cafés branchés et de discothèques. Au coucher du soleil, la promenade y est particulièrement majestueuse avec la brise marine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Hôtels -->
+    <section id="hotels" class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #212529;">Où dormir ? 3 Écrins de Luxe</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #C0A062;"></div>
+            <p class="text-muted mt-3">Des palaces historiques aux resorts les pieds dans l'eau.</p>
+        </div>
+
+        <div class="row">
+            <!-- Four Seasons Hotel Casablanca -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Four Seasons Casablanca">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="badge bg-dark ms-2">Palace</span>
+                        </div>
+                        <h4 class="card-title">Four Seasons Hotel</h4>
+                        <p class="card-text">Véritable bulle de sérénité posée sur la corniche, ce resort urbain d'un luxe absolu offre des chambres somptueuses face à l'Atlantique. Son design contemporain s'intègre parfaitement au paysage, avec un spa réputé et un service irréprochable.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hôtel Le Doge -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Hôtel Le Doge - Relais & Châteaux">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="badge" style="background-color: #C0A062;">Art Déco</span>
+                        </div>
+                        <h4 class="card-title">Le Doge (Relais & Châteaux)</h4>
+                        <p class="card-text">Une plongée intime dans les années 1930. Caché dans une ruelle calme du centre-ville, ce joyau architectural restauré célèbre l'âge d'or de l'Art déco. Ses chambres élégantes, sa bibliothèque et son restaurant gastronomique offrent un voyage dans le temps.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hyatt Regency Casablanca -->
+            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Hyatt Regency Casablanca">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">Hyatt Regency Casablanca</h4>
+                        <p class="card-text">L'hôtel iconique des voyageurs d'affaires et des VIP. Situé au cœur de la ville, sur la fameuse Place des Nations Unies face à l'ancienne médina, il propose plusieurs restaurants prestigieux et offre un accès direct au dynamisme de la métropole.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Restaurants -->
+    <section id="restaurants" class="container mt-5 pt-4 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #212529;">Où manger ? 3 Tables Légendaires</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #C0A062;"></div>
+            <p class="text-muted mt-3">Atmosphère cinématographique, vue sur mer et traditions culinaires.</p>
+        </div>
+
+        <div class="row">
+            <!-- Rick's Café -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Rick's Café">
+                    <div class="card-body">
+                        <h4 class="card-title">Rick's Café</h4>
+                        <p class="card-text">Inspiré par le légendaire film "Casablanca" de 1942 avec Humphrey Bogart. Aménagé dans une ancienne maison sur cour face aux murailles de l'ancienne médina, on y dîne dans une ambiance feutrée au son d'un piano à queue. Un mythe devenu réalité.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- La Sqala -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Restaurant La Sqala">
+                    <div class="card-body">
+                        <h4 class="card-title">La Sqala</h4>
+                        <p class="card-text">Niché dans les vestiges d'une forteresse portugaise du XVIIIe siècle, en bordure de la médina. Son jardin andalou luxuriant et orné de zelliges est un havre de paix. C'est l'adresse incontournable pour un excellent tajine, un couscous royal ou un petit-déjeuner marocain (f'tour).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Le Cabestan -->
+            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Le Cabestan">
+                    <div class="card-body">
+                        <h4 class="card-title">Le Cabestan Ocean View</h4>
+                        <p class="card-text">L'une des tables les plus chics et branchées de la Corniche depuis 1927. Accroché à la corniche, il offre une vue époustouflante sur les vagues se brisant sur les rochers. Spécialisé dans les fruits de mer d'exception et la gastronomie internationale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <h4 class="mb-3" style="color: #C0A062;">Casablanca, la Métropole qui ne dort jamais</h4>
+            <p>Informations inspirées de la page <a href="https://fr.wikipedia.org/wiki/Casablanca" class="text-white text-decoration-underline" target="_blank">Wikipédia Casablanca</a>.</p>
+            <p>&copy; 2026 Tourisme Casablanca. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS pour le défilement fluide -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

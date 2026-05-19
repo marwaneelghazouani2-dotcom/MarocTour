@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marrakech | La Ville Rouge</title>
+    <title>Chefchaouen | La Perle Bleue</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,21 +18,21 @@
         /* Styles Personnalisés */
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #fff9f5; /* Couleur très légèrement teintée (sable/rouge) */
+            background-color: #f0f8ff; /* Bleu Alice (très clair) */
         }
 
         /* Navbar */
         .navbar-brand {
             font-weight: 700;
-            color: #c0392b !important; /* Rouge ocre de Marrakech */
+            color: #0077b6 !important; /* Bleu Chefchaouen */
             font-size: 1.5rem;
         }
         
         /* Hero Section */
         .hero-section {
-            /* Image de la Koutoubia / Marrakech */
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
-                        url('https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            /* Image des ruelles bleues de Chefchaouen */
+            background: linear-gradient(rgba(0, 50, 100, 0.3), rgba(0, 50, 100, 0.5)), 
+                        url('https://images.unsplash.com/photo-1552074284-5e88ef1aef18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
             height: 75vh;
             display: flex;
             align-items: center;
@@ -54,6 +54,7 @@
             font-size: 1.5rem;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease-in-out;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
         /* Section Présentation */
@@ -80,7 +81,7 @@
 
         .info-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 30px rgba(0,119,182,0.15);
         }
 
         .card-img-top {
@@ -89,7 +90,7 @@
         }
 
         .card-title {
-            color: #c0392b; /* Rouge Marrakech */
+            color: #0077b6; /* Bleu Chefchaouen */
             font-weight: 700;
         }
 
@@ -101,7 +102,7 @@
 
         /* Bouton dynamique */
         .btn-custom {
-            background-color: #c0392b;
+            background-color: #0077b6;
             color: white;
             border-radius: 30px;
             padding: 10px 30px;
@@ -109,13 +110,13 @@
             transition: background-color 0.3s;
         }
         .btn-custom:hover {
-            background-color: #922b21;
+            background-color: #005f8a;
             color: white;
         }
 
         /* Footer */
         footer {
-            background-color: #2c3e50;
+            background-color: #003049;
             color: white;
             padding: 40px 0;
             margin-top: 50px;
@@ -175,9 +176,9 @@
     <!-- Hero Section -->
     <section id="accueil" class="hero-section">
         <div class="container">
-            <h1 class="hero-title">Marrakech</h1>
-            <p class="hero-subtitle">La Ville Rouge et le Cœur Palpitant du Maroc</p>
-            <a href="#histoire" class="btn btn-custom btn-lg">Explorer la ville</a>
+            <h1 class="hero-title">Chefchaouen</h1>
+            <p class="hero-subtitle">La Perle Bleue du Rif</p>
+            <a href="#histoire" class="btn btn-custom btn-lg">Découvrir la ville</a>
         </div>
     </section>
 
@@ -186,18 +187,17 @@
         <div class="intro-section px-4 px-md-5">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <h2 class="fw-bold mb-4" style="color: #c0392b;">L'ancienne Cité Impériale</h2>
+                    <h2 class="fw-bold mb-4" style="color: #0077b6;">L'âme des montagnes rifaines</h2>
                     <p class="text-muted" style="line-height: 1.8;">
-                        <strong>Marrakech</strong> (en amazighe : ⴰⵎⵓⵔⴰⴽⵓⵛ) est une ville située dans le centre du Maroc, au pied des montagnes de l'Atlas. Surnommée la <em>« Ville rouge »</em> ou la <em>« Ville ocre »</em> en raison de la couleur de ses remparts historiques.
+                        <strong>Chefchaouen</strong> (en amazighe : ⴰⵛⵛⴰⵡⵏ <em>Ashawen</em>, signifiant « les cornes » à cause des sommets montagneux qui la dominent) est une ville située dans le nord-ouest du Maroc, au cœur des montagnes du Rif, à 600 mètres d'altitude.
                     </p>
                     <p class="text-muted" style="line-height: 1.8;">
-                        Fondée en <strong>1071</strong> par Youssef ben Tachfine, à la tête de la dynastie des Almoravides, Marrakech est l'une des villes impériales du Maroc. Elle a donné son nom au pays tout entier. Aujourd'hui, sa médina (vieille ville) est inscrite au patrimoine mondial de l'UNESCO et attire des millions de visiteurs fascinés par ses souks vibrants, ses palais et ses riads.
+                        Fondée en <strong>1471</strong> par Moulay Ali Ben Moussa Ben Rached El Alami, elle fut d'abord une citadelle pour repousser les invasions portugaises. Surnommée la <em>« Perle Bleue »</em>, la ville est mondialement réputée pour sa médina aux ruelles entièrement peintes dans un camaïeu de bleus fascinant, un héritage esthétique et apaisant unique au monde.
                     </p>
                 </div>
                 <div class="col-md-5 text-center mt-4 mt-md-0">
-                    <!-- Image Remparts de Marrakech (Wikimedia Commons) -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Remparts_de_Marrakech.jpg/800px-Remparts_de_Marrakech.jpg" alt="Remparts de Marrakech" class="img-fluid rounded shadow" onerror="this.src='https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    <p class="small text-muted mt-2">Les célèbres remparts ocre de la ville</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Chefchaouen_Medina_2016.jpg/800px-Chefchaouen_Medina_2016.jpg" alt="Ruelle bleue de Chefchaouen" class="img-fluid rounded shadow" onerror="this.src='https://images.unsplash.com/photo-1549243763-718d0af7ab87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <p class="small text-muted mt-2">Les ruelles pittoresques de la médina</p>
                 </div>
             </div>
         </div>
@@ -206,52 +206,52 @@
     <!-- Section Lieux Incontournables -->
     <section id="lieux" class="container mt-5 pt-4">
         <div class="text-center mb-5">
-            <h2 class="display-6 fw-bold" style="color: #c0392b;">Les Lieux Incontournables</h2>
-            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #2c3e50;"></div>
-            <p class="text-muted mt-3">Un patrimoine historique et culturel d'une richesse exceptionnelle.</p>
+            <h2 class="display-6 fw-bold" style="color: #0077b6;">Les Trésors de la Ville Bleue</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #0077b6;"></div>
+            <p class="text-muted mt-3">Plongez dans l'atmosphère relaxante de ses sites emblématiques.</p>
         </div>
 
         <div class="row">
-            <!-- Place Jemaa el-Fna -->
+            <!-- La Médina -->
             <div class="col-lg-6 col-md-12 mb-4">
                 <div class="card info-card h-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Marrakech_-_Jemaa_el-Fna_3.jpg/800px-Marrakech_-_Jemaa_el-Fna_3.jpg" class="card-img-top" alt="Place Jemaa el-Fna">
+                    <img src="https://images.unsplash.com/photo-1533676802871-eca1ae998cd5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Médina de Chefchaouen">
                     <div class="card-body">
-                        <h4 class="card-title">Place Jemaa el-Fna</h4>
-                        <p class="card-text">Le cœur battant de Marrakech. Charmeurs de serpents, musiciens Gnaouas, conteurs et stands de nourriture transforment cette immense place, classée au patrimoine culturel immatériel par l'UNESCO, en un spectacle permanent du matin jusqu'à tard la nuit.</p>
+                        <h4 class="card-title">La Médina Bleue</h4>
+                        <p class="card-text">L'attraction principale de Chefchaouen. Déambuler au hasard dans ce labyrinthe de maisons chaulées en bleu est une expérience visuelle incomparable. Les portes andalouses, les pots de fleurs colorés et les artisans locaux complètent ce tableau de conte de fées.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Mosquée de la Koutoubia -->
+            <!-- Place Outa El Hammam -->
             <div class="col-lg-6 col-md-12 mb-4">
                 <div class="card info-card h-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Koutoubia_Mosque.jpg/800px-Koutoubia_Mosque.jpg" class="card-img-top" alt="Mosquée de la Koutoubia">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Place_Outa_El_Hammam.jpg/800px-Place_Outa_El_Hammam.jpg" class="card-img-top" alt="Place Outa El Hammam" onerror="this.src='https://images.unsplash.com/photo-1629809968417-105ff7135f62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                     <div class="card-body">
-                        <h4 class="card-title">Mosquée de la Koutoubia</h4>
-                        <p class="card-text">Bâtie au XIIe siècle sous la dynastie des Almohades, son minaret de 77 mètres de haut est le point de repère de la ville. Son architecture a inspiré la Giralda de Séville et la Tour Hassan de Rabat.</p>
+                        <h4 class="card-title">Place Outa El Hammam</h4>
+                        <p class="card-text">Le cœur battant de la vieille ville. Bordée de cafés animés et de restaurants, cette place pavée est dominée par les remparts rouges de la Kasbah et le minaret octogonal de la Grande Mosquée (Tarik-Ben-Ziad), unique dans la région.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Jardin Majorelle -->
+            <!-- La Kasbah -->
             <div class="col-lg-6 col-md-12 mb-4">
                 <div class="card info-card h-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Jardin_Majorelle_-_Marrakech.jpg/800px-Jardin_Majorelle_-_Marrakech.jpg" class="card-img-top" alt="Jardin Majorelle">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Kasbah_of_Chefchaouen.jpg/800px-Kasbah_of_Chefchaouen.jpg" class="card-img-top" alt="Kasbah de Chefchaouen" onerror="this.src='https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                     <div class="card-body">
-                        <h4 class="card-title">Jardin Majorelle</h4>
-                        <p class="card-text">Un jardin botanique luxuriant créé par le peintre français Jacques Majorelle en 1931, racheté plus tard par Yves Saint Laurent. Il est célèbre pour son "bleu Majorelle" intense et abrite aujourd'hui le musée d'art berbère.</p>
+                        <h4 class="card-title">La Kasbah et ses jardins</h4>
+                        <p class="card-text">Bâtie au XVe siècle par le fondateur de la ville, cette forteresse lourdement restaurée abrite aujourd'hui un ravissant jardin andalou ombragé, un musée ethnographique et offre une vue panoramique sur la ville depuis ses tours.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Palais de la Bahia -->
+            <!-- Source Ras El Maa -->
             <div class="col-lg-6 col-md-12 mb-4">
                 <div class="card info-card h-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Bahia_Palace_Marrakesh.jpg/800px-Bahia_Palace_Marrakesh.jpg" class="card-img-top" alt="Palais de la Bahia">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Ras_El_Maa_Chefchaouen.jpg/800px-Ras_El_Maa_Chefchaouen.jpg" class="card-img-top" alt="Source Ras El Maa" onerror="this.src='https://images.unsplash.com/photo-1583499871880-9288e227038e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                     <div class="card-body">
-                        <h4 class="card-title">Palais de la Bahia</h4>
-                        <p class="card-text">Construit à la fin du XIXe siècle, ce palais de 8 hectares est un chef-d'œuvre de l'architecture marocaine avec ses plafonds peints, ses zelliges, ses cours andalouses et ses somptueux jardins intérieurs.</p>
+                        <h4 class="card-title">La Source Ras El Maa</h4>
+                        <p class="card-text">Située juste à l'extérieur des remparts est de la médina, cette source d'eau douce jaillissant de la montagne alimente la ville. C'est un lieu de rassemblement très rafraîchissant où les femmes viennent encore laver le linge de manière traditionnelle.</p>
                     </div>
                 </div>
             </div>
@@ -261,50 +261,50 @@
     <!-- Section Hôtels -->
     <section id="hotels" class="container mt-5 pt-4">
         <div class="text-center mb-5">
-            <h2 class="display-6 fw-bold" style="color: #c0392b;">Où dormir ? 3 Hôtels de Légende</h2>
-            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #2c3e50;"></div>
-            <p class="text-muted mt-3">Marrakech abrite certains des plus beaux palaces du monde.</p>
+            <h2 class="display-6 fw-bold" style="color: #0077b6;">Où dormir ? 3 Riads Magiques</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #0077b6;"></div>
+            <p class="text-muted mt-3">L'hospitalité rifaine dans des demeures de charme.</p>
         </div>
 
         <div class="row">
-            <!-- La Mamounia -->
+            <!-- Lina Ryad & Spa -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card info-card h-100">
-                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="La Mamounia">
-                    <div class="card-body">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="badge bg-dark ms-2">Palace</span>
-                        </div>
-                        <h4 class="card-title">La Mamounia</h4>
-                        <p class="card-text">Véritable mythe international depuis 1923, ce palace a accueilli Winston Churchill, Alfred Hitchcock ou encore Charlie Chaplin. Niché dans de vastes jardins royaux, c'est l'incarnation de l'élégance marocaine.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Royal Mansour -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card info-card h-100">
-                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Royal Mansour">
-                    <div class="card-body">
-                        <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <span class="badge bg-dark ms-2">Palace</span>
-                        </div>
-                        <h4 class="card-title">Le Royal Mansour</h4>
-                        <p class="card-text">Il n'y a pas de chambres ou de suites au Royal Mansour, seulement des riads privés exclusifs. Construit à la demande du Roi Mohammed VI, il illustre l'excellence absolue de l'artisanat d'art marocain.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Selman Marrakech -->
-            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
-                <div class="card info-card h-100">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Selman Marrakech">
+                    <img src="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Lina Ryad & Spa">
                     <div class="card-body">
                         <div class="stars">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <h4 class="card-title">Le Selman Marrakech</h4>
-                        <p class="card-text">Situé au pied de l'Atlas, cet hôtel majestueux conçu par Jacques Garcia se distingue par son atmosphère andalouse et, surtout, par ses haras abritant des chevaux pur-sang arabes primés qui se baladent dans les jardins.</p>
+                        <h4 class="card-title">Lina Ryad & Spa</h4>
+                        <p class="card-text">Une oasis de luxe au cœur de la médina bleue. Ce riad élégant propose de superbes suites, un spa avec hammam traditionnel et piscine intérieure chauffée, ainsi qu'un rooftop offrant l'une des plus belles vues sur les montagnes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dar Jasmine -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Dar Jasmine">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">Dar Jasmine</h4>
+                        <p class="card-text">Perché à flanc de colline, cet hôtel de charme requiert de monter quelques marches, mais la récompense est absolue : une piscine à débordement et des terrasses privées avec une vue imprenable et plongeante sur toute la ville bleue.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Riad Cherifa -->
+            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Riad Cherifa">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">Riad Cherifa</h4>
+                        <p class="card-text">L'authenticité marocaine alliée au confort moderne. Idéalement situé près de la place principale, ce Riad excelle par sa décoration minutieuse, ses plafonds en bois sculpté, sa cour intérieure apaisante et son accueil très chaleureux.</p>
                     </div>
                 </div>
             </div>
@@ -314,41 +314,41 @@
     <!-- Section Restaurants -->
     <section id="restaurants" class="container mt-5 pt-4 mb-5">
         <div class="text-center mb-5">
-            <h2 class="display-6 fw-bold" style="color: #c0392b;">Où manger ? 3 Restaurants Immanquables</h2>
-            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #2c3e50;"></div>
-            <p class="text-muted mt-3">De la haute gastronomie marocaine aux rooftops modernes.</p>
+            <h2 class="display-6 fw-bold" style="color: #0077b6;">Où manger ? Saveurs Locales</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #0077b6;"></div>
+            <p class="text-muted mt-3">Fromage de chèvre local, tajines mijotés et douceur de vivre.</p>
         </div>
 
         <div class="row">
-            <!-- Dar Yacout -->
+            <!-- Restaurant Bab Ssour -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card info-card h-100">
-                    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Dar Yacout">
+                    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Restaurant Bab Ssour">
                     <div class="card-body">
-                        <h4 class="card-title">Dar Yacout</h4>
-                        <p class="card-text">Situé au cœur de la médina, Dar Yacout est une véritable institution gastronomique. Dans un décor digne des mille et une nuits, on y sert l'un des meilleurs dîners traditionnels (méchoui, pastillas) avec des musiciens andalous en arrière-plan.</p>
+                        <h4 class="card-title">Restaurant Bab Ssour</h4>
+                        <p class="card-text">L'un des restaurants les plus réputés et authentiques de la ville. Fréquenté aussi bien par les locaux que les touristes, il sert des plats marocains familiaux savoureux à des prix très abordables (excellents tajines aux légumes, bissara, et kefta).</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Nomad -->
+            <!-- Café Restaurant Sofia -->
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card info-card h-100">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Nomad Marrakech">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Café Restaurant Sofia">
                     <div class="card-body">
-                        <h4 class="card-title">Nomad</h4>
-                        <p class="card-text">Un incontournable moderne. Surplombant la fameuse place des Épices, le rooftop du Nomad offre une vue spectaculaire. La carte propose une "cuisine marocaine moderne", légère et très inventive (burgers d'agneau revisités, pastillas végétariennes).</p>
+                        <h4 class="card-title">Café Restaurant Sofia</h4>
+                        <p class="card-text">Caché dans une petite ruelle pittoresque, ce tout petit restaurant géré par des femmes est une véritable pépite. On s'y assoit sur des chaises bleues dans la rue pour y déguster des tajines succulents et un couscous maison inoubliable.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Le Jardin -->
+            <!-- L'Ermitage de la Source (Ras El Maa) -->
             <div class="col-lg-4 col-md-6 mb-4 mx-auto">
                 <div class="card info-card h-100">
-                    <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Le Jardin">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="L'Ermitage de la Source">
                     <div class="card-body">
-                        <h4 class="card-title">Le Jardin</h4>
-                        <p class="card-text">Caché dans les ruelles labyrinthiques de la médina, ce restaurant porte bien son nom. C'est une oasis verdoyante de fraîcheur au style années 60 marocain, offrant des plats sains, des salades rafraîchissantes et d'excellents tajines.</p>
+                        <h4 class="card-title">Café autour de Ras El Maa</h4>
+                        <p class="card-text">Autour de la source de Ras El Maa, de nombreux petits cafés posent leurs tables directement dans le cours d'eau cristallin. Un endroit idyllique pour déguster un thé à la menthe frais accompagné de fromage de chèvre local et de pain cuit au four à bois, les pieds dans l'eau.</p>
                     </div>
                 </div>
             </div>
@@ -358,9 +358,9 @@
     <!-- Footer -->
     <footer class="text-center">
         <div class="container">
-            <h4 class="mb-3">Marrakech, la magie de l'Ocre</h4>
-            <p>Informations inspirées de la page <a href="https://fr.wikipedia.org/wiki/Marrakech" class="text-white text-decoration-underline" target="_blank">Wikipédia Marrakech</a>.</p>
-            <p>&copy; 2026 Tourisme Marrakech. Tous droits réservés.</p>
+            <h4 class="mb-3">Chefchaouen, le rêve en bleu</h4>
+            <p>Informations inspirées de la page <a href="https://fr.wikipedia.org/wiki/Chefchaouen" class="text-white text-decoration-underline" target="_blank">Wikipédia Chefchaouen</a>.</p>
+            <p>&copy; 2026 Tourisme Chefchaouen. Tous droits réservés.</p>
         </div>
     </footer>
 

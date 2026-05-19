@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guelmim | La Porte du Sahara</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (pour les icônes d'étoiles) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Styles Personnalisés */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fdf8f5; /* Couleur sable très clair */
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-weight: 700;
+            color: #b85d19 !important; /* Ocre / Terre cuite du désert */
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            /* Image de dunes / caravane de chameaux */
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1543881473-cb19bb782806?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background-attachment: fixed;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            animation: fadeInDown 1s ease-in-out;
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #f3c28e; /* Sable doré */
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        /* Section Présentation */
+        .intro-section {
+            background-color: white;
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-top: -50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Cartes d'information (Lieux, Hôtels, Restos) */
+        .info-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(184, 93, 25, 0.2);
+        }
+
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            color: #b85d19; /* Ocre */
+            font-weight: 700;
+        }
+
+        .stars {
+            color: #e67e22; /* Orange / Doré pour les étoiles */
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        /* Bouton dynamique */
+        .btn-custom {
+            background-color: #b85d19; /* Ocre du désert */
+            color: white;
+            border-radius: 30px;
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-custom:hover {
+            background-color: #8e440f;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c1e16; /* Marron foncé profond */
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MAROC MAGIQUE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="villesDropdown" role="button" data-bs-toggle="dropdown">
+                            Changer de Ville
+                        </a>
+                        <ul class="dropdown-menu shadow">
+                            <li><a class="dropdown-item" href="tanger.html">Tanger</a></li>
+                            <li><a class="dropdown-item" href="tetouan.html">Tétouan</a></li>
+                            <li><a class="dropdown-item" href="chefchaouen.html">Chefchaouen</a></li>
+                            <li><a class="dropdown-item" href="rabat.html">Rabat</a></li>
+                            <li><a class="dropdown-item" href="sale.html">Salé</a></li>
+                            <li><a class="dropdown-item" href="casablanca.html">Casablanca</a></li>
+                            <li><a class="dropdown-item" href="marrakech.html">Marrakech</a></li>
+                            <li><a class="dropdown-item" href="ouarzazate.html">Ouarzazate</a></li>
+                            <li><a class="dropdown-item" href="agadir.html">Agadir</a></li>
+                            <li><a class="dropdown-item" href="guelmim.html">Guelmim</a></li>
+                            <li><a class="dropdown-item" href="laayoune.html">Laâyoune</a></li>
+                            <li><a class="dropdown-item" href="dakhla.html">Dakhla</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#lieux">Lieux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hotels">Hôtels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Guelmim</h1>
+            <p class="hero-subtitle">La Porte du Sahara et l'Âme des Oasis</p>
+            <a href="#histoire" class="btn btn-custom btn-lg mt-3">Explorer le Grand Sud</a>
+        </div>
+    </section>
+
+    <!-- Section Présentation (Basée sur Wikipédia) -->
+    <section id="histoire" class="container">
+        <div class="intro-section px-4 px-md-5">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h2 class="fw-bold mb-4" style="color: #b85d19;">Carrefour historique des caravanes</h2>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        <strong>Guelmim</strong> (en amazighe : ⴰⴳⵍⵎⵉⵎ, <em>Aglmim</em>, et en arabe : كلميم) est une ville du sud-ouest du Maroc, capitale de la région de Guelmim-Oued Noun. Elle est mondialement connue sous le surnom de <em>« Bab Sahara »</em> (la porte du Sahara).
+                    </p>
+                    <p class="text-muted" style="line-height: 1.8;">
+                        Ancien centre caravanier majeur sur la route du commerce transsaharien, elle reliait le Maroc à Tombouctou et au Sénégal. Aujourd'hui, Guelmim est le point de rencontre entre les traditions sédentaires berbères et la culture nomade sahraouie, offrant des paysages contrastés allant des oasis luxuriantes aux dunes dorées et aux plages sauvages.
+                    </p>
+                </div>
+                <div class="col-md-5 text-center mt-4 mt-md-0">
+                    <img src="https://images.unsplash.com/photo-1549243763-718d0af7ab87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paysage saharien de Guelmim" class="img-fluid rounded shadow">
+                    <p class="small text-muted mt-2">Architecture traditionnelle en pisé et paysages arides</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Lieux Incontournables -->
+    <section id="lieux" class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #b85d19;">Les Trésors de la Région</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #b85d19;"></div>
+            <p class="text-muted mt-3">L'authenticité des marchés locaux et la magie des oasis du grand sud.</p>
+        </div>
+
+        <div class="row">
+            <!-- Le Marché aux chameaux (Amhayrich) -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1552882200-e2b20f9dc8e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Marché aux chameaux d'Amhayrich">
+                    <div class="card-body">
+                        <h4 class="card-title">Le Marché aux chameaux (Amhayrich)</h4>
+                        <p class="card-text">Guelmim abrite le plus grand souk aux dromadaires du Maroc, appelé Amhayrich. Chaque samedi à l'aube, les nomades du désert viennent y vendre leurs troupeaux. C'est un spectacle unique, bruyant, coloré et profondément ancré dans les traditions sahariennes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oasis de Tighmert -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1509391366360-1e97d5259d52?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Oasis de Tighmert">
+                    <div class="card-body">
+                        <h4 class="card-title">L'Oasis de Tighmert</h4>
+                        <p class="card-text">Située à une quinzaine de kilomètres de la ville, cette oasis luxuriante est un havre de paix. Vous pouvez vous y promener à l'ombre des palmiers dattiers, découvrir le système d'irrigation traditionnel (les séguias) et visiter les musées nomades locaux.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plage Blanche -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Agadir_beach.jpg/800px-Agadir_beach.jpg" class="card-img-top" alt="Plage Blanche" onerror="this.src='https://images.unsplash.com/photo-1504681869696-d977211a5f4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <div class="card-body">
+                        <h4 class="card-title">La Plage Blanche</h4>
+                        <p class="card-text">À environ 60 km de Guelmim se trouve ce joyau naturel. Surnommée ainsi par les explorateurs espagnols, c'est une immense étendue de sable vierge de près de 40 kilomètres de long, où les dunes du Sahara plongent directement dans l'océan Atlantique.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- La Kasbah et le centre-ville -->
+            <div class="col-lg-6 col-md-12 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ksar_of_Ait-Ben-Haddou%2C_Ouarzazate%2C_Morocco.jpg/800px-Ksar_of_Ait-Ben-Haddou%2C_Ouarzazate%2C_Morocco.jpg" class="card-img-top" alt="Architecture en pisé">
+                    <div class="card-body">
+                        <h4 class="card-title">L'Architecture en pisé</h4>
+                        <p class="card-text">Bien que la ville se soit modernisée, elle conserve dans ses environs de magnifiques kasbahs et ksour en pisé (terre rouge/ocre). Flâner dans le centre-ville vous permettra également d'acheter des bijoux traditionnels en argent et les fameux voiles colorés (Melahfa) portés par les femmes sahraouies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Hébergements -->
+    <section id="hotels" class="container mt-5 pt-4">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #b85d19;">Où dormir ? L'Hospitalité Nomade</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #b85d19;"></div>
+            <p class="text-muted mt-3">Des hôtels urbains aux maisons d'hôtes au cœur des palmeraies.</p>
+        </div>
+
+        <div class="row">
+            <!-- Oasis Palm Hotel -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1542314831-c6a4d14d837e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Oasis Palm Hotel">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">Oasis Palm Hotel</h4>
+                        <p class="card-text">L'un des hôtels les plus modernes du centre-ville de Guelmim. Il offre tout le confort nécessaire (piscine, grandes chambres climatisées) tout en conservant une décoration subtilement inspirée de l'artisanat saharien.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maison d'Hôtes La Maison Saharienne -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="La Maison Saharienne">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="card-title">La Maison Saharienne (Tighmert)</h4>
+                        <p class="card-text">Pour une immersion totale, cette maison d'hôtes située au cœur de l'oasis de Tighmert est idéale. Construit en terre crue avec des toits en palmes, c'est un havre de paix écologique où l'accueil des hôtes est légendaire.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fort Bou-Jerif -->
+            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Fort Bou-Jerif">
+                    <div class="card-body">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> <span class="badge bg-dark ms-2">Aventure</span>
+                        </div>
+                        <h4 class="card-title">Fort Bou-Jerif</h4>
+                        <p class="card-text">Ancien fort de la légion étrangère devenu un complexe touristique (motel et tentes nomades). Situé dans les terres sauvages entre Guelmim et l'océan, c'est l'étape parfaite pour les amoureux des grands espaces et du hors-piste.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Restaurants -->
+    <section id="restaurants" class="container mt-5 pt-4 mb-5">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold" style="color: #b85d19;">Où manger ? Saveurs du Désert</h2>
+            <div class="mx-auto mt-2" style="height: 4px; width: 60px; background-color: #b85d19;"></div>
+            <p class="text-muted mt-3">Dégustez la fameuse viande de dromadaire et les plats mijotés sous les tentes.</p>
+        </div>
+
+        <div class="row">
+            <!-- Restaurant Auberge Tighmert -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Auberge Tighmert">
+                    <div class="card-body">
+                        <h4 class="card-title">Table de l'Oasis Tighmert</h4>
+                        <p class="card-text">Dans les auberges de l'oasis, on sert sous les tentes caïdales les meilleurs plats traditionnels. C'est l'endroit idéal pour déguster un tajine cuit lentement au feu de bois avec des légumes frais cultivés directement dans les jardins environnants.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant de Fort Bou-Jerif -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Restaurant Fort Bou-Jerif">
+                    <div class="card-body">
+                        <h4 class="card-title">Restaurant Fort Bou-Jerif</h4>
+                        <p class="card-text">Une étape culinaire incontournable pour les voyageurs du Sud. Ce restaurant isolé est très célèbre pour sa grande spécialité : le tajine à la viande de dromadaire. Tendre, peu grasse et savoureuse, c'est une expérience gustative unique à essayer absolument.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Oasis Palm -->
+            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
+                <div class="card info-card h-100">
+                    <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Oasis Palm Restaurant">
+                    <div class="card-body">
+                        <h4 class="card-title">Restaurant Oasis Palm</h4>
+                        <p class="card-text">Pour ceux qui préfèrent rester en centre-ville, ce restaurant propose une carte variée alliant gastronomie marocaine raffinée (pastillas, couscous) et plats internationaux, dans un cadre frais, élégant et climatisé.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <h4 class="mb-3" style="color: #f3c28e;">Guelmim, aux portes de l'infini</h4>
+            <p>Informations inspirées de la page <a href="https://fr.wikipedia.org/wiki/Guelmim" class="text-white text-decoration-underline" target="_blank">Wikipédia Guelmim</a>.</p>
+            <p>&copy; 2026 Tourisme Guelmim. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS pour le défilement fluide -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

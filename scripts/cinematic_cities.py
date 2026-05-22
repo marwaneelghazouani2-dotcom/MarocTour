@@ -1,0 +1,828 @@
+import os
+import re
+import urllib.parse
+from bs4 import BeautifulSoup
+
+# Directory containing the HTML files
+work_dir = "/home/boua/Desktop/S2/WEB/MarocTour"
+
+# List of city files
+city_files = [
+    "Guelmim.html",
+    "Tétouan.html",
+    "agadir.html",
+    "casablanca.html",
+    "chefchaouen.html",
+    "dakhla.html",
+    "laayoune.html",
+    "marrakech.html",
+    "ouarzazate.html",
+    "rabat.html",
+    "sale.html",
+    "tanger.html"
+]
+
+# The template for the cinematic city page
+template = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez __CITY_NAME__, l'un des joyaux du patrimoine marocain.">
+    <title>__TITLE__</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* 1. DESIGN SYSTEM & VARIABLES */
+        :root {
+            --color-orange: #D66800;
+            --color-green: #1B4D3E;
+            --color-red: #B80F0A;
+            --color-gold: #D4AF37;
+            --color-charcoal: #111111;
+            --color-sand: #F4EEDF;
+            
+            --font-display: 'Cinzel', serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* 2. BASE RESETS */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-charcoal);
+            color: var(--color-sand);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* 3. PRELOADER */
+        #preloader {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: var(--color-charcoal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1.5s ease, visibility 1.5s ease;
+        }
+        .star-loader {
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--color-gold);
+            animation: spin 3s linear infinite;
+            position: relative;
+        }
+        .star-loader::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 2px solid var(--color-gold);
+            transform: rotate(45deg);
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        body.loaded #preloader { opacity: 0; visibility: hidden; }
+
+        /* 4. NAVBAR (CINEMATIC) */
+        .navbar-custom {
+            background: transparent;
+            transition: background 0.5s ease, backdrop-filter 0.5s ease, padding 0.5s ease;
+            padding: 25px 0;
+        }
+        .navbar-custom.scrolled {
+            background: rgba(17, 17, 17, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .navbar-custom .navbar-brand {
+            color: var(--color-gold) !important;
+            font-family: var(--font-display);
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+        }
+        .navbar-custom .nav-link {
+            color: var(--color-sand) !important;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+        .navbar-custom .nav-link:hover, .navbar-custom .nav-link.active {
+            color: var(--color-gold) !important;
+        }
+        .dropdown-menu {
+            background-color: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .dropdown-item {
+            color: var(--color-sand);
+            font-family: var(--font-display);
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+        .dropdown-item:hover {
+            background-color: var(--color-gold);
+            color: var(--color-charcoal);
+        }
+        .navbar-toggler {
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+        .navbar-toggler-icon {
+            filter: invert(70%) sepia(40%) saturate(400%) hue-rotate(5deg) brightness(90%) contrast(90%);
+        }
+
+        /* 5. SCROLL PROGRESS TRACKER */
+        .scroll-tracker {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .tracker-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+        }
+        .tracker-dot.active {
+            background: var(--color-gold);
+            transform: scale(1.5);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* 6. HERO SECTION */
+        .hero {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: black;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 120%;
+            background-image: url('__HERO_BG__');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            will-change: transform;
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            mix-blend-mode: screen;
+            padding: 0 20px;
+        }
+        .hero-title {
+            font-size: 8vw;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            color: #ffffff;
+            margin: 0;
+            will-change: transform, letter-spacing, opacity;
+            transform: translateZ(0);
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--color-gold);
+            margin-top: 10px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            will-change: transform, opacity;
+        }
+
+        /* 7. PRESENTATION SECTION */
+        .intro-section {
+            padding: 100px 0;
+            background-color: var(--color-charcoal);
+            position: relative;
+        }
+        .intro-card {
+            background: rgba(20, 20, 20, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 4px;
+            padding: 50px;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .intro-title {
+            color: var(--color-gold);
+            margin-bottom: 25px;
+        }
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(244, 238, 223, 0.85);
+            font-weight: 300;
+        }
+        .intro-image {
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            width: 100%;
+            height: auto;
+        }
+
+        /* 8. SECTIONS AND CARDS */
+        .content-section {
+            padding: 100px 0;
+            background-color: #080808;
+        }
+        .content-section:nth-of-type(even) {
+            background-color: #111111;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--color-gold);
+            letter-spacing: 2px;
+        }
+        .section-header .divider {
+            height: 2px; width: 60px;
+            background-color: var(--color-gold);
+            margin: 20px auto;
+        }
+        .info-card {
+            background: #151515;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.5s ease, box-shadow 0.5s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .info-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+        .info-card .card-img-top {
+            height: 280px;
+            object-fit: cover;
+            filter: grayscale(60%) contrast(110%);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+        .info-card:hover .card-img-top {
+            filter: grayscale(0%) contrast(100%);
+            transform: scale(1.05);
+        }
+        .info-card .card-body {
+            padding: 30px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+        .info-card .card-title {
+            color: var(--color-sand);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .info-card .card-text {
+            color: rgba(244, 238, 223, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-weight: 300;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+        .stars {
+            color: var(--color-gold);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        .badge-luxe {
+            background-color: var(--color-gold);
+            color: var(--color-charcoal);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 30px;
+            margin-left: 10px;
+            display: inline-block;
+        }
+        
+        .btn-maps {
+            display: inline-block;
+            align-self: center;
+            color: var(--color-gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-family: var(--font-display);
+            letter-spacing: 1.5px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .btn-maps:hover {
+            background: var(--color-gold);
+            color: var(--color-charcoal);
+            border-color: var(--color-gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #050505;
+            color: var(--color-sand);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        footer h4 { color: var(--color-gold); letter-spacing: 2px; }
+        footer .social-icons a {
+            color: var(--color-sand);
+            transition: color 0.3s;
+            margin: 0 15px;
+        }
+        footer .social-icons a:hover { color: var(--color-gold); }
+
+        /* ANIMATIONS & REVEAL CLASSES */
+        .text-reveal, .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: opacity, transform;
+        }
+        .text-reveal.in-view, .fade-up.in-view { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 991px) {
+            .hero-title { font-size: 12vw; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .intro-card { padding: 30px; margin-top: -40px; }
+            .scroll-tracker { display: none; }
+            .navbar-custom { background: rgba(17, 17, 17, 0.95); padding: 10px 0; }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <!-- PRELOADER -->
+    <div id="preloader" aria-hidden="true">
+        <div class="star-loader"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-star" style="font-size: 1.2rem; margin-right: 8px;"></i> MAROC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="villesDropdown" role="button" data-bs-toggle="dropdown">
+                            Villes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tanger.html">Tanger</a></li>
+                            <li><a class="dropdown-item" href="Tétouan.html">Tétouan</a></li>
+                            <li><a class="dropdown-item" href="chefchaouen.html">Chefchaouen</a></li>
+                            <li><a class="dropdown-item" href="rabat.html">Rabat</a></li>
+                            <li><a class="dropdown-item" href="sale.html">Salé</a></li>
+                            <li><a class="dropdown-item" href="casablanca.html">Casablanca</a></li>
+                            <li><a class="dropdown-item" href="marrakech.html">Marrakech</a></li>
+                            <li><a class="dropdown-item" href="ouarzazate.html">Ouarzazate</a></li>
+                            <li><a class="dropdown-item" href="agadir.html">Agadir</a></li>
+                            <li><a class="dropdown-item" href="guelmim.html">Guelmim</a></li>
+                            <li><a class="dropdown-item" href="laayoune.html">Laâyoune</a></li>
+                            <li><a class="dropdown-item" href="dakhla.html">Dakhla</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#lieux">Lieux</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hotels">Hôtels</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#restaurants">Restaurants</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SCROLL TRACKER -->
+    <div class="scroll-tracker" aria-hidden="true">
+        <div class="tracker-dot active" data-target="#hero" title="Intro"></div>
+        <div class="tracker-dot" data-target="#histoire" title="Histoire"></div>
+        <div class="tracker-dot" data-target="#lieux" title="Lieux"></div>
+        <div class="tracker-dot" data-target="#hotels" title="Hôtels"></div>
+        <div class="tracker-dot" data-target="#restaurants" title="Restaurants"></div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle">__CITY_NAME__</h1>
+            <p class="hero-subtitle" id="heroSubtitle">__HERO_SUBTITLE__</p>
+        </div>
+    </section>
+
+    <!-- PRESENTATION SECTION -->
+    <section id="histoire" class="intro-section">
+        <div class="container">
+            <div class="intro-card text-reveal">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="intro-title">__INTRO_TITLE__</h2>
+                        <div class="intro-text">
+                            __INTRO_PARAGRAPHS__
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                        <img src="__INTRO_IMG_SRC__" alt="__INTRO_IMG_ALT__" class="img-fluid intro-image">
+                        __INTRO_IMG_CAPTION__
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIEUX SECTION -->
+    <section id="lieux" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2>Lieux Incontournables</h2>
+                <div class="divider"></div>
+                <p class="text-muted">Explorez les merveilles emblématiques de __CITY_NAME__.</p>
+            </div>
+            <div class="row g-4">
+                __LIEUX_CARDS__
+            </div>
+        </div>
+    </section>
+
+    <!-- HOTELS SECTION -->
+    <section id="hotels" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2>Où Dormir ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted">Sélection d'établissements prestigieux pour votre séjour.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                __HOTELS_CARDS__
+            </div>
+        </div>
+    </section>
+
+    <!-- RESTAURANTS SECTION -->
+    <section id="restaurants" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2>Où Manger ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted">Découvrez la richesse culinaire et les tables mythiques de __CITY_NAME__.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                __RESTAURANTS_CARDS__
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <h4 class="mb-3">__FOOTER_TITLE__</h4>
+            <p class="text-muted" style="font-weight: 300;">__FOOTER_SUB__</p>
+            <div class="social-icons mt-4 mb-4">
+                <a href="#"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+            <p class="small text-muted" style="font-size: 0.8rem; letter-spacing: 1px;">&copy; 2026 Maroc Magique Tourisme. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 1. PRELOADER LOGIC
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.body.classList.add('loaded');
+            }, 800);
+        });
+
+        // 2. NAVBAR SCROLL EFFECT
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 3. KINETIC TYPOGRAPHY & PARALLAX ON SCROLL
+        const heroTitle = document.getElementById('heroTitle');
+        const heroSubtitle = document.getElementById('heroSubtitle');
+        const heroBg = document.getElementById('heroBg');
+
+        let ticking = false;
+        let lastScrollY = window.scrollY;
+
+        function updateHero() {
+            if (lastScrollY < window.innerHeight) {
+                heroBg.style.transform = `translate3d(0, ${lastScrollY * 0.4}px, 0)`;
+                const scale = Math.max(0.6, 1 - lastScrollY * 0.0008);
+                const letterSpacing = 0.15 + (lastScrollY * 0.0015);
+                const opacity = Math.max(0, 1 - lastScrollY * 0.002);
+                
+                heroTitle.style.transform = `translate3d(0, ${lastScrollY * 0.5}px, 0) scale(${scale})`;
+                heroTitle.style.letterSpacing = `${letterSpacing}em`;
+                heroTitle.style.opacity = opacity;
+
+                heroSubtitle.style.transform = `translate3d(0, ${lastScrollY * 0.2}px, 0)`;
+                heroSubtitle.style.opacity = opacity;
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            lastScrollY = window.scrollY;
+            if (!ticking) {
+                window.requestAnimationFrame(updateHero);
+                ticking = true;
+            }
+        });
+
+        // 4. INTERSECTION OBSERVER FOR REVEALS
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.text-reveal, .fade-up').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // 5. SCROLL PROGRESS TRACKER
+        const sections = document.querySelectorAll('section');
+        const dots = document.querySelectorAll('.tracker-dot');
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    const activeDot = document.querySelector(`.tracker-dot[data-target="#${entry.target.id}"]`);
+                    if(activeDot) activeDot.classList.add('active');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(sec => sectionObserver.observe(sec));
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const targetId = dot.getAttribute('data-target');
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>"""
+
+def clean_tag_text(soup, css_selector):
+    tag = soup.select_one(css_selector)
+    if tag:
+        return tag.get_text().strip()
+    return ""
+
+def process_file(filename):
+    filepath = os.path.join(work_dir, filename)
+    print(f"Processing {filename}...")
+    with open(filepath, 'r', encoding='utf-8') as f:
+        html_content = f.read()
+
+    soup = BeautifulSoup(html_content, 'html.parser')
+
+    # Get title
+    title = clean_tag_text(soup, 'title') or "Maroc Magique"
+    
+    # Get city name and hero subtitle
+    city_name = clean_tag_text(soup, '.hero-title') or filename.replace('.html', '').capitalize()
+    hero_subtitle = clean_tag_text(soup, '.hero-subtitle') or ""
+
+    # Get hero bg image url
+    style_text = ""
+    for style_tag in soup.find_all('style'):
+        style_text += style_tag.get_text()
+    
+    bg_match = re.search(r'\.hero-section\s*\{[^}]*background(?:-image)?\s*:\s*(?:linear-gradient\([^)]*\)\s*,\s*)?url\([\'"]?([^\'")]+)[\'"]?\)', style_text, re.IGNORECASE)
+    hero_bg = bg_match.group(1) if bg_match else ""
+    if not hero_bg:
+        bg_match = re.search(r'url\([\'"]?([^\'")]+)[\'"]?\)', style_text, re.IGNORECASE)
+        hero_bg = bg_match.group(1) if bg_match else ""
+
+    # Get introduction card contents
+    intro_title = clean_tag_text(soup, '.intro-section h2') or f"Découvrez {city_name}"
+    
+    intro_section = soup.select_one('.intro-section')
+    intro_paragraphs_html = ""
+    if intro_section:
+        paragraphs = intro_section.find_all('p')
+        for p in paragraphs:
+            if 'small' in p.get('class', []):
+                continue
+            intro_paragraphs_html += f"<p class='intro-text'>{p.decode_contents().strip()}</p>"
+    else:
+        intro_paragraphs_html = f"<p class='intro-text'>Découvrez l'histoire fascinante et la culture de {city_name}.</p>"
+
+    # Extract intro image info
+    intro_img = soup.select_one('.intro-section img')
+    intro_img_src = intro_img.get('src') if intro_img else ""
+    intro_img_alt = intro_img.get('alt') if intro_img else city_name
+    intro_img_caption_tag = soup.select_one('.intro-section p.small')
+    intro_img_caption = f"<p class='small text-muted mt-2'>{intro_img_caption_tag.get_text()}</p>" if intro_img_caption_tag else ""
+
+    # Extract Spots (Lieux) cards
+    lieux_cards_html = ""
+    lieux_section = soup.select_one('#lieux')
+    if lieux_section:
+        cards = lieux_section.select('.info-card')
+        for i, card in enumerate(cards):
+            card_img = card.select_one('.card-img-top')
+            img_src = card_img.get('src') if card_img else ""
+            img_alt = card_img.get('alt') if card_img else ""
+            card_title = clean_tag_text(card, '.card-title')
+            card_text = clean_tag_text(card, '.card-text')
+            
+            # Google Maps Link
+            maps_query = urllib.parse.quote_plus(f"{card_title} {city_name} Maroc")
+            maps_link = f"https://www.google.com/maps/search/?api=1&query={maps_query}"
+            
+            delay = f' style="transition-delay: {0.1 * (i % 3)}s;"' if i > 0 else ""
+            lieux_cards_html += f"""
+                <div class="col-lg-6 col-md-12 fade-up"{delay}>
+                    <div class="info-card">
+                        <img src="{img_src}" class="card-img-top" alt="{img_alt}">
+                        <div class="card-body">
+                            <h4 class="card-title">{card_title}</h4>
+                            <p class="card-text">{card_text}</p>
+                            <a href="{maps_link}" target="_blank" class="btn-maps"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>"""
+
+    # Extract Hotels cards
+    hotels_cards_html = ""
+    hotels_section = soup.select_one('#hotels')
+    if hotels_section:
+        cards = hotels_section.select('.info-card')
+        for i, card in enumerate(cards):
+            card_img = card.select_one('.card-img-top')
+            img_src = card_img.get('src') if card_img else ""
+            img_alt = card_img.get('alt') if card_img else ""
+            card_title = clean_tag_text(card, '.card-title')
+            card_text = clean_tag_text(card, '.card-text')
+            
+            stars_container = card.select_one('.stars')
+            stars_html = ""
+            if stars_container:
+                star_icons = stars_container.find_all('i', class_='fa-star')
+                stars_html = "".join([str(s) for s in star_icons])
+            
+            badge_html = ""
+            badge_tag = card.select_one('.badge')
+            if badge_tag:
+                badge_html = f'<span class="badge-luxe">{badge_tag.get_text()}</span>'
+
+            # Google Maps Link
+            maps_query = urllib.parse.quote_plus(f"{card_title} {city_name} Maroc")
+            maps_link = f"https://www.google.com/maps/search/?api=1&query={maps_query}"
+
+            delay = f' style="transition-delay: {0.1 * (i % 3)}s;"' if i > 0 else ""
+            hotels_cards_html += f"""
+                <div class="col-lg-4 col-md-6 fade-up"{delay}>
+                    <div class="info-card">
+                        <img src="{img_src}" class="card-img-top" alt="{img_alt}">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    {stars_html}
+                                    {badge_html}
+                                </div>
+                                <h4 class="card-title">{card_title}</h4>
+                                <p class="card-text">{card_text}</p>
+                            </div>
+                            <a href="{maps_link}" target="_blank" class="btn-maps"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>"""
+
+    # Extract Restaurants cards
+    restaurants_cards_html = ""
+    restaurants_section = soup.select_one('#restaurants')
+    if restaurants_section:
+        cards = restaurants_section.select('.info-card')
+        for i, card in enumerate(cards):
+            card_img = card.select_one('.card-img-top')
+            img_src = card_img.get('src') if card_img else ""
+            img_alt = card_img.get('alt') if card_img else ""
+            card_title = clean_tag_text(card, '.card-title')
+            card_text = clean_tag_text(card, '.card-text')
+
+            # Google Maps Link
+            maps_query = urllib.parse.quote_plus(f"{card_title} {city_name} Maroc")
+            maps_link = f"https://www.google.com/maps/search/?api=1&query={maps_query}"
+
+            delay = f' style="transition-delay: {0.1 * (i % 3)}s;"' if i > 0 else ""
+            restaurants_cards_html += f"""
+                <div class="col-lg-4 col-md-6 fade-up"{delay}>
+                    <div class="info-card">
+                        <img src="{img_src}" class="card-img-top" alt="{img_alt}">
+                        <div class="card-body">
+                            <h4 class="card-title">{card_title}</h4>
+                            <p class="card-text">{card_text}</p>
+                            <a href="{maps_link}" target="_blank" class="btn-maps"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>"""
+
+    # Extract Footer info
+    footer_title = clean_tag_text(soup, 'footer h4') or f"{city_name}, l'aventure vous attend"
+    footer_sub = clean_tag_text(soup, 'footer p') or "Découvrez la beauté, la culture et la gastronomie."
+    if "Informations inspirées de la page" in footer_sub:
+        all_p = soup.select('footer p')
+        if len(all_p) > 1:
+            footer_sub = all_p[1].get_text()
+
+    # Build new content using replace instead of format to avoid bracket issues
+    new_html = template
+    new_html = new_html.replace("__TITLE__", title)
+    new_html = new_html.replace("__CITY_NAME__", city_name)
+    new_html = new_html.replace("__HERO_SUBTITLE__", hero_subtitle)
+    new_html = new_html.replace("__HERO_BG__", hero_bg)
+    new_html = new_html.replace("__INTRO_TITLE__", intro_title)
+    new_html = new_html.replace("__INTRO_PARAGRAPHS__", intro_paragraphs_html)
+    new_html = new_html.replace("__INTRO_IMG_SRC__", intro_img_src)
+    new_html = new_html.replace("__INTRO_IMG_ALT__", intro_img_alt)
+    new_html = new_html.replace("__INTRO_IMG_CAPTION__", intro_img_caption)
+    new_html = new_html.replace("__LIEUX_CARDS__", lieux_cards_html)
+    new_html = new_html.replace("__HOTELS_CARDS__", hotels_cards_html)
+    new_html = new_html.replace("__RESTAURANTS_CARDS__", restaurants_cards_html)
+    new_html = new_html.replace("__FOOTER_TITLE__", footer_title)
+    new_html = new_html.replace("__FOOTER_SUB__", footer_sub)
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(new_html)
+
+for f in city_files:
+    process_file(f)
+print("Finished refactoring all city files!")

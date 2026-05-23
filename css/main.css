@@ -1,4 +1,6 @@
-/* 1. DESIGN SYSTEM & VARIABLES */
+/* 1. SYSTÈME DE CONCEPTION ET VARIABLES DE STYLE (DESIGN SYSTEM & VARIABLES)
+   Contient la palette de couleurs officielle (Or marocain, Vert cèdre de l'Atlas, Rouge impérial),
+   ainsi que la configuration des typographies premium (Cinzel pour les titres, Cairo pour l'arabe). */
 :root {
     --color-orange: #D66800;
     --color-green: #1B4D3E;
@@ -11,7 +13,10 @@
     --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* 2. BASE RESETS */
+/* 2. RÉINITIALISATIONS DE BASE ET COMPORTEMENT DE DÉFILEMENT (BASE RESETS)
+   Définit les marges par défaut, la couleur de fond générale en charbon sombre,
+   et configure 'overflow-x: clip' sur le corps de page pour éliminer le défilement horizontal 
+   sans bloquer le positionnement fixe des conteneurs sticky. */
 html {
     scroll-behavior: smooth;
 }
@@ -135,7 +140,9 @@ body.loaded #preloader { opacity: 0; visibility: hidden; }
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
-/* 6. HERO SECTION */
+/* 6. SECTION D'ENTRÉE CINÉMATIQUE (HERO SECTION)
+   Positionne le titre Hero centré au milieu de l'écran. L'image de fond s'étend sur toute la hauteur
+   du viewport avec un filtre d'assombrissement pour garantir la lisibilité du texte doré. */
 .hero {
     position: relative;
     height: 70vh; /* Default height for cities */
@@ -558,14 +565,20 @@ footer .social-icons a:hover { color: var(--color-gold); }
     margin-right: 0 !important;
 }
 
-/* 14. INTERACTIVE MAP SECTION */
+/* 14. INTERACTIVE MAP SECTION (SECTION DE LA CARTE INTERACTIVE) */
+
+/* Conteneur parent de la carte : Hauteur augmentée à 250vh pour servir de piste de défilement (Scroll Runway) */
 .map-section {
     position: relative;
-    height: 250vh; /* Scroll range for pinning */
+    height: 250vh; 
     background-color: var(--color-charcoal);
     padding: 0;
-    overflow: visible;
+    overflow: visible; /* Permet aux marqueurs et tooltips de déborder si nécessaire */
 }
+
+/* Conteneur figé (Sticky Box) : Reste fixé dans l'écran à 100vh grâce à 'position: sticky; top: 0;' */
+/* Il centre verticalement et horizontalement la carte du Maroc pour une esthétique épurée */
+/* padding-top: 80px évite tout chevauchement avec la barre de navigation fixée en haut */
 .sticky-map-container {
     position: sticky;
     top: 0;
@@ -576,7 +589,7 @@ footer .social-icons a:hover { color: var(--color-gold); }
     align-items: center;
     overflow: hidden;
     padding: 80px 0 20px 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Intègre le padding dans le calcul de la hauteur totale */
 }
 .map-wrapper {
     position: relative;
@@ -596,6 +609,7 @@ footer .social-icons a:hover { color: var(--color-gold); }
     display: block;
     margin: 0 auto;
 }
+/* Tracés des régions administratives : Remplissage transparent par défaut avec filet doré très discret */
 .region-path {
     fill: rgba(255, 255, 255, 0.015);
     stroke: rgba(212, 175, 55, 0.15);
@@ -603,16 +617,20 @@ footer .social-icons a:hover { color: var(--color-gold); }
     cursor: pointer;
     transition: fill 0.4s ease, stroke 0.4s ease;
 }
+/* Effet de survol des régions : Remplissage doré translucide et bordures épaissies */
 .region-path:hover, .region-path.highlighted {
     fill: rgba(212, 175, 55, 0.1);
     stroke: rgba(212, 175, 55, 0.5);
     stroke-width: 1.8;
 }
+/* Ligne pointillée dorée qui relie les villes du Nord au Sud */
 .map-connection-line {
     fill: none;
     stroke: rgba(212, 175, 55, 0.35);
     stroke-width: 1.8;
 }
+/* Marqueurs des villes : Initialement invisibles (opacity: 0, scale: 0.5) pour l'effet d'apparition au défilement */
+/* L'origine de la transformation est calée au centre du cercle grâce à 'transform-origin' et 'transform-box' */
 .city-node {
     cursor: pointer;
     opacity: 0;

@@ -166,7 +166,7 @@ body.loaded #preloader { opacity: 0; visibility: hidden; }
     padding: 0 20px;
 }
 .hero-title {
-    font-size: 8vw;
+    font-size: 4vw;
     font-weight: 800;
     letter-spacing: 0.15em;
     color: #ffffff;

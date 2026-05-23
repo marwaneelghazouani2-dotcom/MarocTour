@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 0. LANGUAGE SETUP
+    // 0. CONFIGURATION DE LA LANGUE ET INITIALISATION DE LA PAGE (LANGUAGE SETUP)
+    // Détermine la page active et récupère la langue préférée enregistrée dans le stockage local (localStorage).
+    // Si aucune langue n'est enregistrée, utilise le français ('fr') par défaut.
+    // Applique les attributs de langue (lang) et la direction d'écriture (dir) sur la racine HTML.
+    // Gère le support spécifique à l'arabe ('ar') en chargeant dynamiquement la version RTL de Bootstrap.
     const path = window.location.pathname;
     let pageName = 'index';
     if (path.includes('.html')) {
@@ -30,7 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 1. DYNAMIC PRELOADER INJECTION
+    // 1. INJECTION ET GESTION DU PRÉCHARGEUR CINÉMATIQUE (DYNAMIC PRELOADER INJECTION)
+    // Crée dynamiquement un écran de chargement (preloader) au tout début du corps de la page.
+    // L'animation présente un motif géométrique ou une étoile dorée qui tourne.
+    // Un gestionnaire d'événement écoute la fin du chargement de la fenêtre ('load') pour masquer 
+    // l'écran de chargement avec un fondu fluide après un délai esthétique de 800ms.
     const preloaderDiv = document.createElement('div');
     preloaderDiv.id = 'preloader';
     preloaderDiv.setAttribute('aria-hidden', 'true');
@@ -43,7 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 800);
     });
 
-    // 2. DYNAMIC NAVBAR INJECTION
+    // 2. GENERATION ET INJECTION DYNAMIQUE DE LA BARRE DE NAVIGATION (DYNAMIC NAVBAR INJECTION)
+    // Injecte une barre de navigation responsive unifiée dans le conteneur '#navbar-placeholder'.
+    // Elle s'adapte automatiquement selon que l'on se trouve sur la page d'accueil (index) ou une page de ville.
+    // Génère dynamiquement le menu déroulant des 12 villes en traduisant leurs noms à la volée.
+    // Construit le commutateur de langue avec un menu déroulant premium (globe terrestre) affichant FR, EN, ES, AR.
+    // Attache des écouteurs de clics pour sauvegarder la langue choisie et recharger la page proprement.
     const navbarPlaceholder = document.getElementById('navbar-placeholder');
     if (navbarPlaceholder) {
         const commonDict = window.MarocTranslations.common ? window.MarocTranslations.common[currentLang] : {};
@@ -142,7 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 3. DYNAMIC SCROLL TRACKER INJECTION
+    // 3. GESTION DU TRACEUR DE DÉFILEMENT FLOTTANT (DYNAMIC SCROLL TRACKER INJECTION)
+    // Génère une barre de navigation latérale composée de puces interactives (Dots) pour chaque section de la page.
+    // Un clic sur une puce fait défiler l'écran de manière fluide vers la section correspondante.
+    // Utilise IntersectionObserver pour détecter la section actuellement visible à l'écran et 
+    // ajouter la classe active sur la puce correspondante en temps réel.
     const scrollTitles = {
         fr: {
             'hero': 'Intro',
@@ -232,7 +249,10 @@ document.addEventListener("DOMContentLoaded", () => {
         sections.forEach(sec => sectionObserver.observe(sec));
     }
 
-    // 4. DYNAMIC FOOTER INJECTION
+    // 4. GENERATION ET INJECTION DYNAMIQUE DU PIED DE PAGE (DYNAMIC FOOTER INJECTION)
+    // Injecte le pied de page (footer) traduit selon la langue courante dans le conteneur '#footer-placeholder'.
+    // Affiche le nom de la ville ou du pays, un sous-titre adapté, les icônes de réseaux sociaux interactives,
+    // ainsi que la mention des droits d'auteur dans la langue active.
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
         const pageDict = window.MarocTranslations[pageName] ? window.MarocTranslations[pageName][currentLang] : {};
@@ -281,7 +301,12 @@ document.addEventListener("DOMContentLoaded", () => {
         footerPlaceholder.innerHTML = footerHTML;
     }
 
-    // 5. DOM TRANSLATION ENGINE
+    // 5. MOTEUR DE TRADUCTION DYNAMIQUE DU DOM (DOM TRANSLATION ENGINE)
+    // Parcourt tout le document HTML à la recherche d'attributs de traduction :
+    // - [data-i18n] : Remplace le texte brut de l'élément en préservant ses icônes FontAwesome enfants.
+    // - [data-i18n-html] : Injecte du code HTML traduit (utile pour les retours à la ligne '<br>').
+    // - [data-i18n-placeholder] : Localise les attributs de saisie (placeholders) dans les formulaires.
+    // Injecte également le titre de la page et la description meta pour l'optimisation SEO de chaque langue.
     function translateDOM() {
         const pageDict = window.MarocTranslations[pageName] ? window.MarocTranslations[pageName][currentLang] : {};
         const commonDict = window.MarocTranslations.common ? window.MarocTranslations.common[currentLang] : {};
@@ -349,7 +374,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Run translations
     translateDOM();
 
-    // 6. NAVBAR SCROLL EFFECT
+    // 6. EFFETS VISUELS DE LA BARRE DE NAVIGATION AU DEFILEMENT (NAVBAR SCROLL EFFECT)
+    // Écoute le défilement de la page. Si l'utilisateur fait défiler de plus de 50 pixels,
+    // ajoute la classe '.scrolled' à la barre de navigation pour la rendre translucide avec un flou de verre.
     const navbar = document.getElementById('navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
@@ -361,7 +388,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 7. KINETIC TYPOGRAPHY & PARALLAX ON SCROLL
+    // 7. PARALLAXE DE L'ARRIERE-PLAN ET TYPOGRAPHIE CINETIQUE (KINETIC TYPOGRAPHY & PARALLAX)
+    // Utilise un gestionnaire d'événement de défilement optimisé via 'requestAnimationFrame' pour réduire la charge CPU.
+    // Calcule la position verticale de défilement pour :
+    // - Faire glisser l'image de fond du Hero en parallaxe à vitesse réduite (0.4x).
+    // - Réduire l'opacité et modifier l'espacement des lettres du titre Hero au fur et à mesure du défilement vers le bas.
+    // - Mettre à jour la progression de la carte interactive du Maroc.
     const heroTitle = document.getElementById('heroTitle');
     const heroSubtitle = document.getElementById('heroSubtitle');
     const heroBg = document.getElementById('heroBg');
@@ -402,7 +434,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 8. INTERSECTION OBSERVER FOR REVEALS
+    // 8. ANIMATIONS D'APPARITION PROGRESSIVE AU DEFILEMENT (INTERSECTION OBSERVER FOR REVEALS)
+    // Observe les éléments ayant les classes '.img-reveal', '.text-reveal', et '.fade-up'.
+    // Dès qu'ils entrent de plus de 15% dans l'écran, leur applique la classe '.in-view' pour déclencher
+    // les transitions de fondu et de glissement matériel définies en CSS.
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -421,21 +456,26 @@ document.addEventListener("DOMContentLoaded", () => {
         revealObserver.observe(el);
     });
 
-    // 8.1. INTERACTIVE MOROCCO MAP LOGIC
+    // 8.1. LOGIQUE DE LA CARTE INTERACTIVE DU MAROC (INTERACTIVE MOROCCO MAP LOGIC)
     const mapSection = document.getElementById('interactive-map');
-    let updateMapScroll = null;
+    let updateMapScroll = null; // Déclaration globale de la fonction de mise à jour au défilement
     
     if (mapSection) {
-        const cityNodes = mapSection.querySelectorAll('.city-node');
-        const regionPaths = mapSection.querySelectorAll('.region-path');
-        const mapTooltip = document.getElementById('map-tooltip');
-        const connectionLine = mapSection.querySelector('.map-connection-line');
-        const stickyMapContainer = mapSection.querySelector('.sticky-map-container');
-        let tooltipTimeout;
-        let isHoveringTooltip = false;
-        let isHoveringMapNode = false;
+        // Sélection de tous les éléments DOM nécessaires pour la carte
+        const cityNodes = mapSection.querySelectorAll('.city-node'); // Cercles marqueurs des villes
+        const regionPaths = mapSection.querySelectorAll('.region-path'); // Tracés SVG des régions administratives
+        const mapTooltip = document.getElementById('map-tooltip'); // Fiche d'information flottante (tooltip)
+        const connectionLine = mapSection.querySelector('.map-connection-line'); // Ligne de liaison pointillée
+        const stickyMapContainer = mapSection.querySelector('.sticky-map-container'); // Conteneur parent figé (sticky)
+        let tooltipTimeout; // Temporisateur pour le masquage fluide de la fiche tooltip
+        let isHoveringTooltip = false; // Drapeau indiquant si le pointeur survole la fiche tooltip
+        let isHoveringMapNode = false; // Drapeau indiquant si le pointeur survole un marqueur de ville
 
-        // Helper to convert SVG translate(X, Y) to standard CSS translate(Xpx, Ypx)
+        // Convertisseur de coordonnées SVG -> CSS :
+        // Les navigateurs modernes exigent des unités comme 'px' pour les transformations CSS.
+        // Si nous appliquons directement 'scale()' sans spécifier 'translate(Xpx, Ypx)', les marqueurs s'effondrent à (0, 0).
+        // Cette fonction convertit 'translate(X, Y)' de l'attribut SVG en 'translate(Xpx, Ypx)' conforme au standard CSS.
+        // Calcule et convertit le translate SVG brut en format CSS standard avec unités 'px'
         function getTranslateCSS(node) {
             const translateAttr = node.getAttribute('transform') || '';
             return translateAttr.replace(
@@ -469,6 +509,7 @@ document.addEventListener("DOMContentLoaded", () => {
             connectionLine.style.strokeDashoffset = length;
         }
 
+        // Affiche et positionne la fiche d'information flottante (tooltip) au-dessus de la ville active
         function showTooltipCard(cityKey, targetElement) {
             clearTimeout(tooltipTimeout);
             
@@ -509,6 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 10);
         }
 
+        // Masque la fiche d'information flottante avec un effet de fondu et de glissement vers le bas
         function hideTooltipCard() {
             tooltipTimeout = setTimeout(() => {
                 if (!isHoveringTooltip && !isHoveringMapNode) {
@@ -524,6 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 150);
         }
 
+        // Met en surbrillance un marqueur de ville et sa région administrative associée
         function highlightCity(cityKey) {
             // Activate node
             cityNodes.forEach(node => {
@@ -605,34 +648,36 @@ document.addEventListener("DOMContentLoaded", () => {
             removeHighlights();
         });
 
-        // The scroll update function
+        // Fonction de rafraîchissement au défilement (Calcul de progression et affichage séquentiel)
         updateMapScroll = function() {
             const rect = mapSection.getBoundingClientRect();
             const viewportHeight = window.innerHeight;
             
-            // Check if map is in view
+            // Si la section de la carte n'est pas du tout visible dans le viewport, on quitte pour économiser les ressources
             if (rect.bottom < 0 || rect.top > viewportHeight) {
                 return;
             }
             
+            // Calcul de la progression du défilement (de 0.0 au début de la section à 1.0 à la fin de la piste)
             const totalScrollable = rect.height - viewportHeight;
             let progress = 0;
             if (totalScrollable > 0) {
                 progress = -rect.top / totalScrollable;
             }
-            progress = Math.min(1, Math.max(0, progress));
+            progress = Math.min(1, Math.max(0, progress)); // Borne la progression entre 0 et 1
             
             const numCities = cityKeys.length;
-            // Map progress to segments:
+            // Division de la progression globale en segments correspondant au nombre de villes (12)
             const visibleCount = Math.floor(progress * (numCities + 1));
             
-            // Draw connection line stroke-dashoffset
+            // Dessin progressif de la ligne pointillée de liaison :
+            // Nous ajustons le 'strokeDashoffset' de 100% de sa longueur (invisible) à 0% (complètement dessinée)
             if (connectionLine) {
                 const length = connectionLine.getTotalLength();
                 connectionLine.style.strokeDashoffset = length * (1 - progress);
             }
             
-            // Update node visibility and active state if the user is not manual-hovering
+            // Mise à jour de l'affichage des marqueurs si l'utilisateur ne survole pas manuellement un point
             if (!isHoveringMapNode && !isHoveringTooltip) {
                 cityKeys.forEach((cityKey, idx) => {
                     const node = mapSection.querySelector(`.city-node[data-city="${cityKey}"]`);
@@ -720,7 +765,10 @@ document.addEventListener("DOMContentLoaded", () => {
         updateMapScroll();
     }
 
-    // 9. Prevent form submission reload and localize submit
+    // 9. FORMULAIRE DE CONTACT ET RETOUR D'INFORMATION LOCALISÉ (CONTACT FORM HANDLER)
+    // Intercepte la soumission du formulaire de contact pour empêcher le rechargement brutal de la page.
+    // Modifie le bouton d'envoi pour afficher une coche verte et un texte de succès traduit (FR, EN, ES, AR).
+    // Réinitialise le formulaire et restaure l'état d'origine du bouton après un délai de 3 secondes.
     document.getElementById('contactForm')?.addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = this.querySelector('button');

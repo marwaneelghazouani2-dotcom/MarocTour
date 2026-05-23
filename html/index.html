@@ -23,7 +23,7 @@
 
     <div id="navbar-placeholder"></div>
 
-    <!-- HERO SECTION -->
+    <!-- SECTION HERO : Écran d'accueil cinématographique avec titre géant et sous-titre traduit -->
     <section id="hero" class="hero hero-index">
         <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image: url('../indexImages/bg_10.jpg');"></div>
         <div class="hero-content">
@@ -32,7 +32,7 @@
         </div>
     </section>
 
-    <!-- CHAPTER I -->
+    <!-- CHAPITRE I : Les Dunes Chuchotantes (Sahara/Désert) - Section immersive avec image d'arrière-plan parallaxe -->
     <section id="chapter-1" class="chapter">
         <div class="chapter-bg" aria-hidden="true" style="background-image: url('../guelmimImages//img_4.jpg');"></div>
         <div class="container chapter-content">
@@ -46,7 +46,7 @@
         </div>
     </section>
 
-    <!-- CHAPTER II -->
+    <!-- CHAPITRE II : Les Labyrinthes Impériaux (Médinas) - Section textuelle décalée à droite -->
     <section id="chapter-2" class="chapter">
         <div class="chapter-bg" aria-hidden="true" style="background-image: url('../marakkechImages//Atlas-view-BD.jpg');"></div>
         <div class="container chapter-content">
@@ -60,7 +60,7 @@
         </div>
     </section>
 
-    <!-- CHAPTER III -->
+    <!-- CHAPITRE III : La Crête Atlantique (Côte) - Section textuelle décalée à gauche -->
     <section id="chapter-3" class="chapter">
         <div class="chapter-bg" aria-hidden="true" style="background-image: url('../dakhlaImages//img_6.webp');"></div>
         <div class="container chapter-content">
@@ -74,20 +74,25 @@
         </div>
     </section>
 
-        <!-- INTERACTIVE MAP SECTION -->
+      <!-- INTERACTIVE MAP SECTION (SECTION CARTE INTERACTIVE) -->
+    <!-- Cette section utilise un conteneur parent à hauteur élevée (250vh) pour créer une "piste de défilement". -->
+    <!-- Le conteneur interne utilise 'sticky' pour se figer à l'écran tandis que les points apparaissent un à un. -->
     <section id="interactive-map" class="map-section">
+        <!-- Conteneur figé (Sticky Container) : Reste fixé dans le viewport pendant le défilement (hauteur 100vh) -->
         <div class="sticky-map-container">
             <div class="container">
+                <!-- En-tête de la section avec support de traduction multilingue -->
                 <div class="section-header text-reveal">
                     <h2 data-i18n="map_title">Carte Interactive du Royaume</h2>
                     <div class="divider"></div>
-                    <p class="" data-i18n="map_subtitle">Découvrez les 12 destinations emblématiques au fil du défilement.</p>
+                    <p class="text-muted" data-i18n="map_subtitle">Découvrez les 12 destinations emblématiques au fil du défilement.</p>
                 </div>
                 
                 <div class="row justify-content-center mt-4">
                     <div class="col-lg-10 text-center">
+                        <!-- Wrapper de la carte : Cadre en verre trempé (glassmorphism) qui contient le SVG -->
                         <div class="map-wrapper">
-                            <!-- SVG Map of Morocco -->
+                            <!-- SVG de la carte du Maroc (viewBox haute définition projetée de 650x700) -->
                             <svg viewBox="0 0 650 700" class="morocco-svg" id="morocco-map">
                                 <defs>
                                     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -141,7 +146,11 @@
                                 <!-- Connecting lines (stylized overlay) -->
                                 <path d="M 456.2,8.5 L 474.1,17.0 L 478.1,37.8 L 424.0,90.0 L 410.0,96.0 L 384.3,115.9 L 368.5,209.2 L 411.3,242.8 M 368.5,209.2 L 303.1,266.2 L 284.2,333.1 L 157.5,418.1 L 47.1,572.1" class="map-connection-line" />
                                 
-                                <!-- Interactive City Markers -->
+                                <!-- Interactive City Markers (Marqueurs Interactifs des Villes) -->
+                                <!-- Chaque marqueur est encapsulé dans un groupe <g> positionné par 'transform="translate(x, y)"'. -->
+                                <!-- 'node-hitbox' : Cercle transparent élargi pour augmenter la zone de clic (norme d'accessibilité mobile). -->
+                                <!-- 'node-pulse' : Cercle d'animation à ondes d'impulsion dorée (effets d'attraction visuelle). -->
+                                <!-- 'node-dot' : Point central du marqueur, devenant doré et brillant au survol/activation. -->
                                 <g class="map-markers">
                                                                         <!-- Tanger -->
                                     <g class="city-node" data-city="tanger" transform="translate(456.2, 8.5)">
@@ -236,7 +245,7 @@
         </div>
     </section>
 
-    <!-- DESTINATIONS GRID -->
+    <!-- GRILLE DES DESTINATIONS : Présentation des 12 joyaux sous forme de cartes d'exploration premium -->
     <section id="destinations" class="destinations-section">
         <div class="container">
             <div class="section-header text-reveal">
@@ -382,7 +391,7 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
+    <!-- SECTION DE CONTACT : Formulaire de demande de voyage personnalisé avec arrière-plan thématique -->
     <section id="contact" class="contact-section" style="background-image: url('../indexImages/bg_10.jpg');">
         <div class="container contact-content">
             <div class="row justify-content-center">

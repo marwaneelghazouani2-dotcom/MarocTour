@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez Casablanca, l'un des joyaux du patrimoine marocain.">
+    <title>Casablanca | La Métropole Économique</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image: url('../casaImages/image.png');"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle" data-i18n="title">Casablanca</h1>
+            <p class="hero-subtitle" id="heroSubtitle" data-i18n="hero_subtitle">La Ville Blanche, le Poumon Économique du Maroc</p>
+        </div>
+    </section>
+
+    <!-- PRESENTATION SECTION -->
+    <section id="histoire" class="intro-section">
+        <div class="container">
+            <div class="intro-card text-reveal">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="intro-title" data-i18n="intro_title">L'Énergie d'une Métropole Mondiale</h2>
+                        <div class="intro-text" data-i18n-html="intro_text">
+                            <p class='intro-text'><strong>Casablanca</strong> (en amazighe : ⴰⵏⴼⴰ, <em>Anfa</em>, et en arabe : الدار البيضاء, <em>Dar El Baïda</em>) est la plus grande ville du Maroc et la première métropole du Maghreb. Située sur la côte atlantique, elle est le cœur économique, industriel et financier du pays.</p><p class='intro-text'>Développée sur le site de l'antique cité d'Anfa, détruite puis reconstruite, elle a connu un essor fulgurant au XXe siècle sous le protectorat français, sous la direction du maréchal Lyautey et de l'architecte Henri Prost. Casablanca est aujourd'hui un véritable <strong>musée à ciel ouvert</strong>, reconnue mondialement pour son héritage architectural Art déco et néo-mauresque spectaculaire.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                        <img src="../casaImages/images.jpg" alt="Architecture de Casablanca" class="img-fluid intro-image">
+                        <p class='small text-muted mt-2'>Harmonie entre tradition mauresque et modernité</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIEUX SECTION -->
+    <section id="lieux" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_lieux">Lieux Incontournables</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_lieux">Explorez les merveilles emblématiques de Casablanca.</p>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-6 col-md-12 fade-up">
+                    <div class="info-card">
+                        <img src="../casaImages/activity-la-mosquee-hassan-ii-1747153303.png" class="card-img-top" alt="Mosquée Hassan II">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_0">Mosquée Hassan II</h4>
+                            <p class="card-text" data-i18n="lieux_desc_0">L'un des plus grands et des plus beaux édifices religieux au monde. Érigée en partie sur les flots de l'océan Atlantique, elle possède un minaret culminant à 210 mètres (le deuxième plus haut du monde). Un chef-d'œuvre absolu de l'artisanat marocain, de la sculpture sur bois au zellige, ouvert aux visites non-musulmanes.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Mosqu%C3%A9e+Hassan+II+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../casaImages/haboous.jpg" class="card-img-top" alt="Quartier des Habous - Mahkama du Pacha">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_1">Le Quartier des Habous</h4>
+                            <p class="card-text" data-i18n="lieux_desc_1">Surnommé la "nouvelle médina", ce quartier a été construit dans les années 1920 par les Français. C'est un modèle d'urbanisme mêlant règles hygiénistes modernes et architecture traditionnelle marocaine. On y trouve de magnifiques arcades, la célèbre Mahkama du Pacha et de nombreux artisans (cuivre, tapis, pâtisseries).</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Le+Quartier+des+Habous+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../casaImages/plaza-de-mohammed-v.jpg" class="card-img-top" alt="Place Mohammed V">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_2">Place Mohammed V (Art Déco)</h4>
+                            <p class="card-text" data-i18n="lieux_desc_2">Le cœur administratif de la ville et le joyau de l'architecture Art Déco casablancaise. La place est ceinturée de bâtiments grandioses des années 1930 : la Wilaya (Préfecture), le Palais de Justice, la Grande Poste et le Consulat de France, le tout entourant une grande fontaine lumineuse.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Place+Mohammed+V+%28Art+D%C3%A9co%29+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.0s;">
+                    <div class="info-card">
+                        <img src="../casaImages/Boulevard_de_la_Corniche,_Dar-el-Beida,_Morocco_-_panoramio_(13).jpg" class="card-img-top" alt="Corniche de Casablanca">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_3">La Corniche d'Ain Diab</h4>
+                            <p class="card-text" data-i18n="lieux_desc_3">Le lieu de détente favori des Casablancais. Ce long boulevard qui longe l'océan Atlantique est bordé de plages, de beach clubs exclusifs, de cinémas, de cafés branchés et de discothèques. Au coucher du soleil, la promenade y est particulièrement majestueuse avec la brise marine.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=La+Corniche+d%27Ain+Diab+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOTELS SECTION -->
+    <section id="hotels" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_hotels">Où Dormir ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_hotels">Sélection d'établissements prestigieux pour votre séjour.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="info-card">
+                        <img src="../casaImages/Four Seasons Hotel.jpg" class="card-img-top" alt="Four Seasons Casablanca">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_0">Four Seasons Hotel</h4>
+                                <p class="card-text" data-i18n="hotels_desc_0">Véritable bulle de sérénité posée sur la corniche, ce resort urbain d'un luxe absolu offre des chambres somptueuses face à l'Atlantique. Son design contemporain s'intègre parfaitement au paysage, avec un spa réputé et un service irréprochable.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Four+Seasons+Hotel+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../casaImages/Le Doge (Relais & Châteaux).jpg" class="card-img-top" alt="Hôtel Le Doge - Relais & Châteaux">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_1">Le Doge (Relais & Châteaux)</h4>
+                                <p class="card-text" data-i18n="hotels_desc_1">Une plongée intime dans les années 1930. Caché dans une ruelle calme du centre-ville, ce joyau architectural restauré célèbre l'âge d'or de l'Art déco. Ses chambres élégantes, sa bibliothèque et son restaurant gastronomique offrent un voyage dans le temps.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Le+Doge+%28Relais+%26+Ch%C3%A2teaux%29+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../casaImages/Hyatt Regency Casablanca.jpg" class="card-img-top" alt="Hyatt Regency Casablanca">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_2">Hyatt Regency Casablanca</h4>
+                                <p class="card-text" data-i18n="hotels_desc_2">L'hôtel iconique des voyageurs d'affaires et des VIP. Situé au cœur de la ville, sur la fameuse Place des Nations Unies face à l'ancienne médina, il propose plusieurs restaurants prestigieux et offre un accès direct au dynamisme de la métropole.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Hyatt+Regency+Casablanca+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESTAURANTS SECTION -->
+    <section id="restaurants" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_restaurants">Où Manger ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_restaurants">Découvrez la richesse culinaire et les tables mythiques de Casablanca.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="info-card">
+                        <img src="../casaImages/Rick's Café.jpg" class="card-img-top" alt="Rick's Café">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_0">Rick's Café</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_0">Inspiré par le légendaire film "Casablanca" de 1942 avec Humphrey Bogart. Aménagé dans une ancienne maison sur cour face aux murailles de l'ancienne médina, on y dîne dans une ambiance feutrée au son d'un piano à queue. Un mythe devenu réalité.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rick%27s+Caf%C3%A9+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../casaImages/La Sqala.jpg" class="card-img-top" alt="Restaurant La Sqala">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_1">La Sqala</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_1">Niché dans les vestiges d'une forteresse portugaise du XVIIIe siècle, en bordure de la médina. Son jardin andalou luxuriant et orné de zelliges est un havre de paix. C'est l'adresse incontournable pour un excellent tajine, un couscous royal ou un petit-déjeuner marocain (f'tour).</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=La+Sqala+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../casaImages/Le Cabestan Ocean View.jpg" class="card-img-top" alt="Le Cabestan">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_2">Le Cabestan Ocean View</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_2">L'une des tables les plus chics et branchées de la Corniche depuis 1927. Accroché à la corniche, il offre une vue époustouflante sur les vagues se brisant sur les rochers. Spécialisé dans les fruits de mer d'exception et la gastronomie internationale.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Le+Cabestan+Ocean+View+Casablanca+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder" data-city="Casablanca" data-tagline="la Métropole qui ne dort jamais"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/translations/common.js"></script>
+    <script src="../js/translations/casablanca.js"></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

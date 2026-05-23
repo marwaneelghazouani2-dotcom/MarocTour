@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez Chefchaouen, l'un des joyaux du patrimoine marocain.">
+    <title>Chefchaouen | La Perle Bleue</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image: url('../chefchaouenImages/bg_12.jpg');"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle" data-i18n="title">Chefchaouen</h1>
+            <p class="hero-subtitle" id="heroSubtitle" data-i18n="hero_subtitle">La Perle Bleue du Rif</p>
+        </div>
+    </section>
+
+    <!-- PRESENTATION SECTION -->
+    <section id="histoire" class="intro-section">
+        <div class="container">
+            <div class="intro-card text-reveal">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="intro-title" data-i18n="intro_title">L'âme des montagnes rifaines</h2>
+                        <div class="intro-text" data-i18n-html="intro_text">
+                            <p class='intro-text'><strong>Chefchaouen</strong> (en amazighe : ⴰⵛⵛⴰⵡⵏ <em>Ashawen</em>, signifiant « les cornes » à cause des sommets montagneux qui la dominent) est une ville située dans le nord-ouest du Maroc, au cœur des montagnes du Rif, à 600 mètres d'altitude.</p><p class='intro-text'>Fondée en <strong>1471</strong> par Moulay Ali Ben Moussa Ben Rached El Alami, elle fut d'abord une citadelle pour repousser les invasions portugaises. Surnommée la <em>« Perle Bleue »</em>, la ville est mondialement réputée pour sa médina aux ruelles entièrement peintes dans un camaïeu de bleus fascinant, un héritage esthétique et apaisant unique au monde.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                        <img src="../chefchaouenImages/img_1.avif" alt="Ruelle bleue de Chefchaouen" class="img-fluid intro-image">
+                        <p class='small text-muted mt-2'>Les ruelles pittoresques de la médina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIEUX SECTION -->
+    <section id="lieux" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_lieux">Lieux Incontournables</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_lieux">Explorez les merveilles emblématiques de Chefchaouen.</p>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-6 col-md-12 fade-up">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_2.jpg" class="card-img-top" alt="Médina de Chefchaouen">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_0">La Médina Bleue</h4>
+                            <p class="card-text" data-i18n="lieux_desc_0">L'attraction principale de Chefchaouen. Déambuler au hasard dans ce labyrinthe de maisons chaulées en bleu est une expérience visuelle incomparable. Les portes andalouses, les pots de fleurs colorés et les artisans locaux complètent ce tableau de conte de fées.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=La+M%C3%A9dina+Bleue+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_3.jpg" class="card-img-top" alt="Place Outa El Hammam">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_1">Place Outa El Hammam</h4>
+                            <p class="card-text" data-i18n="lieux_desc_1">Le cœur battant de la vieille ville. Bordée de cafés animés et de restaurants, cette place pavée est dominée par les remparts rouges de la Kasbah et le minaret octogonal de la Grande Mosquée (Tarik-Ben-Ziad), unique dans la région.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Place+Outa+El+Hammam+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_4.jpeg" class="card-img-top" alt="Kasbah de Chefchaouen">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_2">La Kasbah et ses jardins</h4>
+                            <p class="card-text" data-i18n="lieux_desc_2">Bâtie au XVe siècle par le fondateur de la ville, cette forteresse lourdement restaurée abrite aujourd'hui un ravissant jardin andalou ombragé, un musée ethnographique et offre une vue panoramique sur la ville depuis ses tours.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=La+Kasbah+et+ses+jardins+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.0s;">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_5.jpg" class="card-img-top" alt="Source Ras El Maa">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_3">La Source Ras El Maa</h4>
+                            <p class="card-text" data-i18n="lieux_desc_3">Située juste à l'extérieur des remparts est de la médina, cette source d'eau douce jaillissant de la montagne alimente la ville. C'est un lieu de rassemblement très rafraîchissant où les femmes viennent encore laver le linge de manière traditionnelle.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=La+Source+Ras+El+Maa+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOTELS SECTION -->
+    <section id="hotels" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_hotels">Où Dormir ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_hotels">Sélection d'établissements prestigieux pour votre séjour.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_6.jpg" class="card-img-top" alt="Lina Ryad & Spa">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_0">Lina Ryad & Spa</h4>
+                                <p class="card-text" data-i18n="hotels_desc_0">Une oasis de luxe au cœur de la médina bleue. Ce riad élégant propose de superbes suites, un spa avec hammam traditionnel et piscine intérieure chauffée, ainsi qu'un rooftop offrant l'une des plus belles vues sur les montagnes.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Lina+Ryad+%26+Spa+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_7.jpg" class="card-img-top" alt="Dar Jasmine">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_1">Dar Jasmine</h4>
+                                <p class="card-text" data-i18n="hotels_desc_1">Perché à flanc de colline, cet hôtel de charme requiert de monter quelques marches, mais la récompense est absolue : une piscine à débordement et des terrasses privées avec une vue imprenable et plongeante sur toute la ville bleue.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Dar+Jasmine+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_8.webp" class="card-img-top" alt="Riad Cherifa">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_2">Riad Cherifa</h4>
+                                <p class="card-text" data-i18n="hotels_desc_2">L'authenticité marocaine alliée au confort moderne. Idéalement situé près de la place principale, ce Riad excelle par sa décoration minutieuse, ses plafonds en bois sculpté, sa cour intérieure apaisante et son accueil très chaleureux.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Riad+Cherifa+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESTAURANTS SECTION -->
+    <section id="restaurants" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_restaurants">Où Manger ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_restaurants">Découvrez la richesse culinaire et les tables mythiques de Chefchaouen.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_9.jpg" class="card-img-top" alt="Restaurant Bab Ssour">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_0">Restaurant Bab Ssour</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_0">L'un des restaurants les plus réputés et authentiques de la ville. Fréquenté aussi bien par les locaux que les touristes, il sert des plats marocains familiaux savoureux à des prix très abordables (excellents tajines aux légumes, bissara, et kefta).</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Bab+Ssour+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_10.jpg" class="card-img-top" alt="Café Restaurant Sofia">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_1">Café Restaurant Sofia</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_1">Caché dans une petite ruelle pittoresque, ce tout petit restaurant géré par des femmes est une véritable pépite. On s'y assoit sur des chaises bleues dans la rue pour y déguster des tajines succulents et un couscous maison inoubliable.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+Restaurant+Sofia+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../chefchaouenImages/img_11.jpg" class="card-img-top" alt="L'Ermitage de la Source">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_2">Café autour de Ras El Maa</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_2">Autour de la source de Ras El Maa, de nombreux petits cafés posent leurs tables directement dans le cours d'eau cristallin. Un endroit idyllique pour déguster un thé à la menthe frais accompagné de fromage de chèvre local et de pain cuit au four à bois, les pieds dans l'eau.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Caf%C3%A9+autour+de+Ras+El+Maa+Chefchaouen+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder" data-city="Chefchaouen" data-tagline="le rêve en bleu"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/translations/common.js"></script>
+    <script src="../js/translations/chefchaouen.js"></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

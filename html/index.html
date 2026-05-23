@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorez la magie du Maroc. Des dunes chuchotantes du Sahara aux labyrinthes impériaux des médinas.">
+    <title>MAROC | Là où le temps chuchote à l'âme</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero hero-index">
+        <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image: url('../indexImages/bg_10.jpg');"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle" data-i18n="title">MAROC</h1>
+            <p class="hero-subtitle" id="heroSubtitle" data-i18n="hero_subtitle">Là où le temps chuchote à l'âme</p>
+        </div>
+    </section>
+
+    <!-- CHAPTER I -->
+    <section id="chapter-1" class="chapter">
+        <div class="chapter-bg" aria-hidden="true" style="background-image: url('../guelmimImages//img_4.jpg');"></div>
+        <div class="container chapter-content">
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-2 order-lg-1 text-reveal">
+                    <span class="chapter-num" data-i18n="ch1_num">CHAPITRE I</span>
+                    <h2 class="chapter-title" data-i18n-html="ch1_title">Les Dunes<br>Chuchotantes</h2>
+                    <p class="chapter-text" data-i18n="ch1_text">Entrez dans l'immensité du Sahara. Ici, le vent sculpte des montagnes de sable doré et le silence est si profond qu'il résonne. Alors que le soleil plonge sous l'horizon, le ciel se teinte d'orange saharien et de rouge impérial, peignant un chef-d'œuvre plus ancien que la civilisation elle-même.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER II -->
+    <section id="chapter-2" class="chapter">
+        <div class="chapter-bg" aria-hidden="true" style="background-image: url('../marakkechImages//Atlas-view-BD.jpg');"></div>
+        <div class="container chapter-content">
+            <div class="row align-items-center">
+                <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0 text-reveal">
+                    <span class="chapter-num" data-i18n="ch2_num">CHAPITRE II</span>
+                    <h2 class="chapter-title" data-i18n-html="ch2_title">Les Labyrinthes<br>Impériaux</h2>
+                    <p class="chapter-text" data-i18n="ch2_text">Perdez-vous dans les médinas ancestrales de Fès et Marrakech. Une surcharge sensorielle de mosaïques vert cèdre de l'Atlas, d'arômes de cumin moulu et d'eau de rose, rythmée par le martèlement des dinandiers. Chaque ruelle étroite est un portail vers le passé, drapé d'or royal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPTER III -->
+    <section id="chapter-3" class="chapter">
+        <div class="chapter-bg" aria-hidden="true" style="background-image: url('../dakhlaImages//img_6.webp');"></div>
+        <div class="container chapter-content">
+            <div class="row align-items-center">
+                <div class="col-lg-5 order-2 order-lg-1 text-reveal">
+                    <span class="chapter-num" data-i18n="ch3_num">CHAPITRE III</span>
+                    <h2 class="chapter-title" data-i18n-html="ch3_title">La Crête<br>Atlantique</h2>
+                    <p class="chapter-text" data-i18n="ch3_text">Là où l'océan rencontre la pierre millénaire. Sentez la brise salée de l'Atlantique balayer les ruelles bleues de Chefchaouen et les remparts fortifiés d'Essaouira. Un lieu de collision sereine, où l'eau sculpte l'histoire dans les côtes sauvages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- INTERACTIVE MAP SECTION -->
+    <section id="interactive-map" class="map-section">
+        <div class="sticky-map-container">
+            <div class="container">
+                <div class="section-header text-reveal">
+                    <h2 data-i18n="map_title">Carte Interactive du Royaume</h2>
+                    <div class="divider"></div>
+                    <p class="text-muted" data-i18n="map_subtitle">Découvrez les 12 destinations emblématiques au fil du défilement.</p>
+                </div>
+                
+                <div class="row justify-content-center mt-4">
+                    <div class="col-lg-10 text-center">
+                        <div class="map-wrapper">
+                            <!-- SVG Map of Morocco -->
+                            <svg viewBox="0 0 650 700" class="morocco-svg" id="morocco-map">
+                                <defs>
+                                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="5" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+                                
+                                <!-- Regions Paths -->
+                                <g class="map-regions">
+<!-- SVG ViewBox: 0 0 650.0 698.8 -->
+<!-- Beni Mellal-Khenifra -->
+<path id="region-beni-mellal" d="M 478.6,144.6 L 479.8,164.3 L 478.6,167.5 L 475.8,167.0 L 475.3,170.4 L 470.0,173.0 L 470.2,175.6 L 472.4,177.6 L 471.4,180.4 L 473.4,183.1 L 469.0,181.4 L 465.7,181.4 L 463.5,186.2 L 457.5,188.4 L 456.3,192.9 L 458.0,195.8 L 455.8,200.1 L 449.3,206.1 L 442.9,208.3 L 434.9,212.6 L 426.0,214.5 L 421.7,215.7 L 420.0,221.7 L 415.5,224.9 L 408.5,223.4 L 408.5,220.8 L 404.2,222.7 L 402.5,219.1 L 405.4,212.1 L 400.1,210.2 L 396.8,204.4 L 400.1,201.1 L 404.7,202.5 L 409.5,200.8 L 408.5,195.6 L 407.3,189.8 L 405.4,187.4 L 406.9,175.6 L 408.7,171.4 L 410.8,162.9 L 407.3,157.3 L 409.8,145.6 L 414.8,143.1 L 415.0,130.6 L 422.3,129.5 L 427.1,132.9 L 430.2,131.8 L 434.6,129.5 L 433.3,125.6 L 433.1,123.3 L 435.4,118.7 L 439.0,118.2 L 440.7,121.2 L 443.8,125.6 L 449.6,126.2 L 456.3,125.8 L 454.4,121.4 L 454.8,118.7 L 456.3,116.7 L 457.5,120.6 L 464.0,121.7 L 467.7,130.0 L 472.5,134.4 L 477.5,133.4 L 476.3,139.0 L 478.6,144.6 Z" class="region-path" data-region="beni-mellal" />
+
+<!-- Casablanca-Settat -->
+<path id="region-casablanca" d="M 415.0,130.6 L 414.8,143.1 L 409.8,145.6 L 407.3,157.3 L 410.8,162.9 L 408.7,171.4 L 406.9,175.6 L 401.7,175.0 L 397.3,173.5 L 393.7,168.3 L 388.5,169.8 L 385.8,169.8 L 383.1,166.6 L 382.2,162.3 L 377.0,159.8 L 371.4,152.9 L 369.1,149.5 L 366.4,152.9 L 366.0,158.5 L 364.5,160.0 L 366.6,161.8 L 364.9,165.8 L 357.2,169.1 L 353.7,175.0 L 347.4,175.4 L 344.7,170.2 L 344.3,165.4 L 337.6,165.8 L 333.7,165.0 L 328.0,161.4 L 327.4,158.7 L 329.3,157.1 L 327.8,154.2 L 330.4,152.0 L 337.0,145.1 L 338.4,142.8 L 341.4,139.0 L 342.8,136.4 L 342.3,135.7 L 343.8,134.0 L 344.9,133.1 L 345.4,133.0 L 345.2,132.4 L 345.8,131.6 L 346.7,130.7 L 347.5,131.0 L 347.9,131.7 L 348.8,131.5 L 350.2,131.4 L 351.5,130.2 L 352.9,129.2 L 354.2,127.9 L 355.3,126.0 L 357.1,125.7 L 359.9,124.5 L 364.0,122.9 L 369.2,120.4 L 373.2,118.9 L 374.8,117.6 L 375.6,118.0 L 378.7,116.4 L 380.4,114.9 L 382.1,114.1 L 382.3,114.4 L 382.9,114.3 L 383.4,114.3 L 383.9,114.1 L 384.8,114.1 L 385.3,113.8 L 388.2,112.0 L 391.4,109.5 L 392.3,108.9 L 392.3,109.2 L 392.9,109.4 L 394.4,108.4 L 398.3,105.4 L 400.4,104.7 L 402.3,103.9 L 403.9,102.6 L 405.0,102.1 L 407.9,104.3 L 407.9,113.2 L 411.4,111.4 L 415.8,113.9 L 418.1,114.3 L 418.5,116.2 L 416.0,118.0 L 417.7,120.3 L 415.8,127.0 L 415.0,130.6 Z" class="region-path" data-region="casablanca" />
+
+<!-- Dakhla-Oued Eddahab -->
+<path id="region-dakhla" d="M 206.3,542.8 L 206.5,584.5 L 199.8,583.5 L 195.2,585.9 L 192.6,590.3 L 188.7,590.3 L 186.6,591.9 L 182.5,589.8 L 174.8,595.3 L 166.9,600.3 L 158.7,612.6 L 162.6,623.4 L 166.4,674.5 L 7.0,674.3 L 2.4,689.2 L 2.2,698.8 L 0.0,693.7 L 0.7,690.6 L 1.9,680.3 L 3.8,667.1 L 3.8,657.7 L 5.8,656.3 L 4.6,653.9 L 7.7,651.0 L 10.1,641.9 L 10.6,638.3 L 13.0,638.8 L 13.0,637.1 L 15.1,634.4 L 18.0,633.0 L 19.9,633.7 L 22.8,631.8 L 24.3,629.2 L 25.0,625.1 L 24.5,623.4 L 29.3,619.8 L 31.7,610.4 L 33.1,605.9 L 37.5,603.5 L 38.2,599.9 L 34.6,597.7 L 42.7,588.3 L 44.7,581.4 L 49.2,574.9 L 54.7,566.7 L 54.7,563.1 L 51.9,564.6 L 44.7,572.7 L 54.0,559.3 L 60.5,555.7 L 66.0,548.2 L 75.9,540.6 L 82.8,531.7 L 87.9,527.6 L 96.6,530.1 L 100.8,538.0 L 104.9,535.9 L 106.8,535.5 L 111.4,536.8 L 117.2,535.9 L 119.5,533.0 L 125.8,536.4 L 135.6,539.5 L 139.8,541.6 L 148.7,535.5 L 154.0,535.7 L 161.9,536.4 L 169.4,537.2 L 176.9,540.1 L 185.2,543.1 L 190.9,542.2 L 196.1,540.3 L 200.9,542.2 L 206.3,542.8 Z" class="region-path" data-region="dakhla" />
+
+<!-- Daraa-Tafilelt -->
+<path id="region-daraa" d="M 379.5,232.1 L 384.5,229.0 L 389.4,228.3 L 392.1,225.8 L 400.2,224.2 L 400.2,221.1 L 402.5,219.1 L 404.2,222.7 L 408.5,220.8 L 408.5,223.4 L 415.5,224.9 L 420.0,221.7 L 421.7,215.7 L 426.0,214.5 L 434.9,212.6 L 442.9,208.3 L 449.3,206.1 L 455.8,200.1 L 458.0,195.8 L 456.3,192.9 L 457.5,188.4 L 463.5,186.2 L 465.7,181.4 L 469.0,181.4 L 473.4,183.1 L 471.4,180.4 L 472.4,177.6 L 470.2,175.6 L 470.0,173.0 L 475.3,170.4 L 475.8,167.0 L 478.6,167.5 L 479.8,164.3 L 478.6,144.6 L 485.5,143.4 L 487.6,138.0 L 492.4,136.1 L 496.3,136.1 L 498.6,139.6 L 498.8,146.1 L 504.5,147.3 L 508.2,145.9 L 515.3,151.9 L 517.8,158.0 L 521.8,161.3 L 524.9,161.5 L 528.0,157.2 L 532.3,162.3 L 533.1,166.5 L 537.6,172.0 L 538.4,176.7 L 541.4,179.2 L 543.5,182.1 L 546.5,182.3 L 549.6,179.8 L 552.8,182.0 L 556.5,181.4 L 563.3,180.1 L 560.9,183.3 L 560.0,190.1 L 564.1,195.1 L 565.9,198.5 L 562.2,199.5 L 560.6,200.8 L 565.4,204.0 L 555.4,207.5 L 550.4,209.7 L 545.3,207.8 L 540.3,207.5 L 538.6,209.2 L 539.1,211.1 L 537.4,217.4 L 538.1,219.5 L 541.9,223.1 L 540.5,223.6 L 539.5,231.3 L 539.8,233.4 L 544.8,234.2 L 546.3,235.8 L 548.7,236.8 L 549.2,240.6 L 547.7,244.2 L 533.3,245.9 L 523.7,254.8 L 519.4,256.5 L 514.1,259.1 L 508.3,261.1 L 493.7,267.1 L 491.0,273.8 L 482.9,284.1 L 478.1,288.9 L 473.5,292.5 L 467.3,291.6 L 465.3,292.8 L 459.8,293.7 L 455.3,294.0 L 449.0,298.0 L 444.5,299.5 L 439.7,299.0 L 436.5,297.8 L 431.7,298.8 L 429.8,300.7 L 428.1,299.2 L 430.9,296.6 L 430.7,293.9 L 432.7,290.8 L 435.0,286.3 L 432.7,284.3 L 430.9,286.4 L 428.4,285.8 L 428.9,280.9 L 426.5,276.9 L 430.3,271.2 L 427.8,268.7 L 424.0,268.6 L 423.1,263.9 L 418.2,265.8 L 414.9,267.4 L 413.9,271.5 L 410.4,271.0 L 408.1,273.0 L 406.4,271.3 L 401.8,268.2 L 396.4,277.8 L 396.8,281.3 L 395.5,280.7 L 392.2,279.0 L 389.9,279.0 L 387.9,277.1 L 384.7,277.1 L 384.1,275.2 L 384.9,271.3 L 381.0,270.1 L 380.7,265.4 L 384.4,263.9 L 387.6,261.1 L 385.9,257.1 L 383.4,252.2 L 380.8,251.9 L 380.9,249.5 L 381.5,246.3 L 379.5,245.4 L 379.2,240.0 L 378.8,236.8 L 378.0,234.7 L 380.9,232.5 L 379.9,231.9 L 379.5,232.1 Z" class="region-path" data-region="daraa" />
+
+<!-- Fes-Meknes -->
+<path id="region-fes-meknes" d="M 532.3,162.3 L 528.0,157.2 L 524.9,161.5 L 521.8,161.3 L 517.8,158.0 L 515.3,151.9 L 508.2,145.9 L 504.5,147.3 L 498.8,146.1 L 498.6,139.6 L 496.3,136.1 L 492.4,136.1 L 487.6,138.0 L 485.5,143.4 L 478.6,144.6 L 476.3,139.0 L 477.5,133.4 L 472.5,134.4 L 467.7,130.0 L 464.0,121.7 L 457.5,120.6 L 456.3,116.7 L 457.7,108.6 L 459.8,102.5 L 457.1,99.6 L 459.6,94.8 L 454.4,90.2 L 452.7,86.2 L 454.6,83.9 L 456.5,81.4 L 461.9,83.9 L 461.5,87.7 L 463.0,88.3 L 468.6,87.1 L 470.2,82.9 L 468.6,77.5 L 468.6,74.4 L 472.8,72.7 L 476.9,70.2 L 480.3,67.0 L 483.6,55.0 L 489.6,55.2 L 496.9,52.4 L 500.3,58.7 L 510.3,60.4 L 518.0,55.0 L 520.9,57.4 L 527.8,52.5 L 534.9,50.4 L 541.3,51.2 L 544.3,51.9 L 544.8,54.7 L 542.4,59.5 L 538.7,62.2 L 538.9,66.4 L 536.0,70.0 L 534.8,73.3 L 531.8,77.4 L 533.4,81.2 L 535.9,85.8 L 535.5,96.3 L 531.8,100.3 L 529.4,105.3 L 525.9,110.4 L 525.7,113.5 L 528.8,116.4 L 532.3,114.0 L 535.2,116.7 L 539.5,112.2 L 537.7,110.5 L 540.0,106.3 L 544.5,99.7 L 548.6,96.9 L 550.9,96.7 L 554.3,99.9 L 560.5,101.3 L 566.6,102.3 L 567.8,105.5 L 560.0,112.3 L 559.7,115.0 L 568.7,121.0 L 572.9,126.7 L 575.5,130.2 L 571.2,131.1 L 567.2,133.0 L 562.4,135.0 L 553.9,136.0 L 547.7,134.4 L 545.4,135.5 L 539.4,143.1 L 533.6,151.7 L 530.5,158.1 L 532.3,162.3 Z" class="region-path" data-region="fes-meknes" />
+
+<!-- Guelmim-Oued Noun -->
+<path id="region-guelmim" d="M 340.7,433.5 L 334.4,433.5 L 328.3,431.4 L 316.6,411.8 L 312.9,408.9 L 307.0,409.8 L 299.1,410.0 L 293.5,404.1 L 288.7,398.7 L 281.4,400.6 L 275.8,394.1 L 271.4,391.4 L 261.2,393.5 L 258.9,390.6 L 239.3,390.1 L 234.3,392.9 L 227.4,389.5 L 218.0,388.7 L 215.5,380.6 L 210.3,373.5 L 209.9,369.5 L 212.0,368.4 L 227.9,361.9 L 242.5,344.1 L 253.1,337.4 L 266.1,329.3 L 268.7,324.0 L 276.9,318.2 L 284.8,306.9 L 286.4,303.7 L 287.2,308.0 L 288.2,308.4 L 290.5,306.8 L 292.1,311.6 L 294.0,313.9 L 298.2,311.9 L 299.8,311.9 L 302.7,313.8 L 304.5,311.6 L 307.9,312.7 L 309.4,313.2 L 312.2,311.3 L 315.0,310.9 L 318.2,311.8 L 320.8,315.1 L 322.8,321.6 L 324.7,324.4 L 322.4,328.6 L 322.4,330.6 L 318.2,332.8 L 320.2,336.7 L 321.8,338.4 L 323.1,340.5 L 321.6,345.9 L 326.2,349.7 L 330.2,353.9 L 332.5,358.9 L 340.7,367.3 L 340.7,433.5 Z" class="region-path" data-region="guelmim" />
+
+<!-- Laayoune-Saguia Hamra -->
+<path id="region-laayoune" d="M 206.3,542.8 L 200.9,542.2 L 196.1,540.3 L 190.9,542.2 L 185.2,543.1 L 176.9,540.1 L 169.4,537.2 L 161.9,536.4 L 154.0,535.7 L 148.7,535.5 L 139.8,541.6 L 135.6,539.5 L 125.8,536.4 L 119.5,533.0 L 117.2,535.9 L 111.4,536.8 L 106.8,535.5 L 104.9,535.9 L 100.8,538.0 L 96.6,530.1 L 87.9,527.6 L 91.2,510.8 L 92.4,496.4 L 97.0,490.1 L 97.5,481.7 L 102.1,476.2 L 105.2,466.6 L 106.4,458.7 L 111.2,455.8 L 118.6,448.8 L 122.2,448.3 L 138.8,439.7 L 143.8,432.7 L 149.6,415.7 L 156.1,398.4 L 160.9,390.7 L 164.7,386.4 L 167.8,380.2 L 171.7,380.2 L 196.9,376.6 L 209.9,369.5 L 210.3,373.5 L 215.5,380.6 L 218.0,388.7 L 227.4,389.5 L 234.3,392.9 L 239.3,390.1 L 258.9,390.6 L 261.2,393.5 L 271.4,391.4 L 275.8,394.1 L 281.4,400.6 L 288.7,398.7 L 293.5,404.1 L 299.1,410.0 L 307.0,409.8 L 312.9,408.9 L 316.6,411.8 L 328.3,431.4 L 334.4,433.5 L 340.7,433.5 L 340.7,469.0 L 206.0,469.5 L 206.3,542.8 Z" class="region-path" data-region="laayoune" />
+
+<!-- Marrakech-Safi -->
+<path id="region-marrakech" d="M 402.5,219.1 L 400.2,221.1 L 400.2,224.2 L 392.1,225.8 L 389.4,228.3 L 384.5,229.0 L 379.5,232.1 L 376.1,234.0 L 372.5,236.6 L 371.2,240.4 L 370.2,243.3 L 367.3,243.8 L 362.8,241.4 L 360.2,242.5 L 355.4,245.7 L 352.3,244.5 L 348.2,244.3 L 341.8,244.1 L 338.8,246.4 L 337.6,245.9 L 337.7,241.5 L 335.6,239.3 L 333.4,239.9 L 330.7,242.1 L 328.6,246.9 L 325.7,246.8 L 321.1,246.1 L 317.2,247.2 L 314.9,243.1 L 312.7,242.4 L 309.9,246.9 L 307.0,245.7 L 305.6,242.4 L 300.0,247.3 L 296.1,247.0 L 296.7,242.8 L 293.9,240.6 L 293.8,239.9 L 294.3,236.6 L 293.8,234.4 L 292.9,232.7 L 293.7,230.8 L 294.1,229.7 L 294.5,227.7 L 295.2,223.5 L 294.3,220.7 L 293.1,219.9 L 293.7,219.0 L 295.9,216.4 L 295.9,215.3 L 299.9,209.3 L 299.9,205.7 L 300.5,205.2 L 312.6,190.7 L 313.6,188.7 L 314.2,186.3 L 316.2,183.6 L 317.1,181.9 L 316.5,179.7 L 317.2,177.9 L 317.0,176.4 L 316.0,175.3 L 315.3,173.8 L 316.2,172.9 L 317.7,170.9 L 317.9,169.0 L 316.7,167.4 L 316.5,166.7 L 315.8,165.4 L 318.9,162.8 L 323.2,159.0 L 325.7,155.9 L 327.8,154.2 L 329.3,157.1 L 327.4,158.7 L 328.0,161.4 L 333.7,165.0 L 337.6,165.8 L 344.3,165.4 L 344.7,170.2 L 347.4,175.4 L 353.7,175.0 L 357.2,169.1 L 364.9,165.8 L 366.6,161.8 L 364.5,160.0 L 366.0,158.5 L 366.4,152.9 L 369.1,149.5 L 371.4,152.9 L 377.0,159.8 L 382.2,162.3 L 383.1,166.6 L 385.8,169.8 L 388.5,169.8 L 393.7,168.3 L 397.3,173.5 L 401.7,175.0 L 406.9,175.6 L 405.4,187.4 L 407.3,189.8 L 408.5,195.6 L 409.5,200.8 L 404.7,202.5 L 400.1,201.1 L 396.8,204.4 L 400.1,210.2 L 405.4,212.1 L 402.5,219.1 Z" class="region-path" data-region="marrakech" />
+
+<!-- Oriental -->
+<path id="region-oriental" d="M 565.4,204.0 L 560.6,200.8 L 562.2,199.5 L 565.9,198.5 L 564.1,195.1 L 560.0,190.1 L 560.9,183.3 L 563.3,180.1 L 556.5,181.4 L 552.8,182.0 L 549.6,179.8 L 546.5,182.3 L 543.5,182.1 L 541.4,179.2 L 538.4,176.7 L 537.6,172.0 L 533.1,166.5 L 532.3,162.3 L 530.5,158.1 L 533.6,151.7 L 539.4,143.1 L 545.4,135.5 L 547.7,134.4 L 553.9,136.0 L 562.4,135.0 L 567.2,133.0 L 571.2,131.1 L 575.5,130.2 L 572.9,126.7 L 568.7,121.0 L 559.7,115.0 L 560.0,112.3 L 567.8,105.5 L 566.6,102.3 L 560.5,101.3 L 554.3,99.9 L 550.9,96.7 L 548.6,96.9 L 544.5,99.7 L 540.0,106.3 L 537.7,110.5 L 539.5,112.2 L 535.2,116.7 L 532.3,114.0 L 528.8,116.4 L 525.7,113.5 L 525.9,110.4 L 529.4,105.3 L 531.8,100.3 L 535.5,96.3 L 535.9,85.8 L 533.4,81.2 L 531.8,77.4 L 534.8,73.3 L 536.0,70.0 L 538.9,66.4 L 538.7,62.2 L 542.4,59.5 L 544.8,54.7 L 544.3,51.9 L 541.3,51.2 L 534.9,50.4 L 535.8,35.9 L 537.1,34.3 L 538.9,31.8 L 540.8,31.5 L 542.6,32.4 L 546.4,34.6 L 548.7,35.4 L 553.9,36.1 L 557.1,35.3 L 560.1,34.5 L 562.8,33.4 L 566.1,31.2 L 568.9,26.9 L 571.7,24.3 L 572.7,28.3 L 573.7,31.6 L 574.0,34.5 L 573.7,38.2 L 575.8,40.0 L 578.8,40.5 L 581.1,39.3 L 583.6,40.6 L 587.7,42.3 L 590.8,40.2 L 593.3,37.8 L 595.0,39.1 L 598.4,40.9 L 601.6,40.2 L 600.3,43.3 L 604.4,46.2 L 608.5,49.5 L 611.1,48.6 L 611.3,51.2 L 614.5,54.1 L 615.9,54.6 L 620.0,58.9 L 616.1,64.9 L 622.1,72.3 L 619.0,75.0 L 622.1,80.2 L 621.2,82.4 L 624.8,90.8 L 622.6,102.8 L 622.6,106.2 L 621.7,109.3 L 623.6,111.2 L 626.2,113.6 L 627.7,117.2 L 626.5,121.1 L 624.1,126.6 L 625.3,132.4 L 629.6,138.4 L 632.2,141.2 L 630.3,144.8 L 628.4,145.6 L 635.8,156.4 L 641.1,158.5 L 650.0,166.9 L 646.6,170.5 L 642.6,171.5 L 640.9,174.1 L 641.8,176.8 L 640.9,182.1 L 639.7,183.3 L 643.3,183.7 L 645.4,185.9 L 639.0,189.0 L 616.6,189.0 L 602.2,186.4 L 593.1,186.9 L 584.7,189.7 L 577.0,189.0 L 573.9,190.7 L 573.6,196.9 L 573.2,201.3 L 565.4,204.0 Z" class="region-path" data-region="oriental" />
+
+<!-- Rabat-Sale-Kenitra -->
+<path id="region-rabat-sale" d="M 456.3,116.7 L 454.8,118.7 L 454.4,121.4 L 456.3,125.8 L 449.6,126.2 L 443.8,125.6 L 440.7,121.2 L 439.0,118.2 L 435.4,118.7 L 433.1,123.3 L 433.3,125.6 L 434.6,129.5 L 430.2,131.8 L 427.1,132.9 L 422.3,129.5 L 415.0,130.6 L 415.8,127.0 L 417.7,120.3 L 416.0,118.0 L 418.5,116.2 L 418.1,114.3 L 415.8,113.9 L 411.4,111.4 L 407.9,113.2 L 407.9,104.3 L 405.0,102.1 L 406.2,101.4 L 408.8,99.8 L 411.4,97.1 L 414.6,93.7 L 416.0,91.7 L 418.3,88.9 L 420.6,84.5 L 421.1,82.1 L 421.7,81.3 L 430.5,66.6 L 434.7,56.4 L 439.0,44.6 L 449.0,45.6 L 456.3,47.9 L 459.4,49.9 L 458.0,54.7 L 460.4,59.8 L 466.1,59.5 L 471.3,63.1 L 473.0,67.1 L 476.9,70.2 L 472.8,72.7 L 468.6,74.4 L 468.6,77.5 L 470.2,82.9 L 468.6,87.1 L 463.0,88.3 L 461.5,87.7 L 461.9,83.9 L 456.5,81.4 L 454.6,83.9 L 452.7,86.2 L 454.4,90.2 L 459.6,94.8 L 457.1,99.6 L 459.8,102.5 L 457.7,108.6 L 456.3,116.7 Z" class="region-path" data-region="rabat-sale" />
+
+<!-- Souss Massa -->
+<path id="region-souss-massa" d="M 340.7,367.3 L 332.5,358.9 L 330.2,353.9 L 326.2,349.7 L 321.6,345.9 L 323.1,340.5 L 321.8,338.4 L 320.2,336.7 L 318.2,332.8 L 322.4,330.6 L 322.4,328.6 L 324.7,324.4 L 322.8,321.6 L 320.8,315.1 L 318.2,311.8 L 315.0,310.9 L 312.2,311.3 L 309.4,313.2 L 307.9,312.7 L 304.5,311.6 L 302.7,313.8 L 299.8,311.9 L 298.2,311.9 L 294.0,313.9 L 292.1,311.6 L 290.5,306.8 L 288.2,308.4 L 287.2,308.0 L 286.4,303.7 L 290.3,295.9 L 295.8,291.9 L 297.9,285.7 L 300.9,280.5 L 301.7,273.8 L 303.0,268.3 L 302.9,266.3 L 301.1,266.1 L 299.8,261.9 L 298.5,260.5 L 296.8,259.4 L 295.2,257.2 L 293.5,256.9 L 291.7,256.7 L 291.4,254.7 L 292.6,251.8 L 293.7,249.5 L 294.6,246.5 L 294.1,246.0 L 294.4,244.4 L 294.3,242.7 L 293.9,240.6 L 296.7,242.8 L 296.1,247.0 L 300.0,247.3 L 305.6,242.4 L 307.0,245.7 L 309.9,246.9 L 312.7,242.4 L 314.9,243.1 L 317.2,247.2 L 321.1,246.1 L 325.7,246.8 L 328.6,246.9 L 330.7,242.1 L 333.4,239.9 L 335.6,239.3 L 337.7,241.5 L 337.6,245.9 L 338.8,246.4 L 341.8,244.1 L 348.2,244.3 L 352.3,244.5 L 355.4,245.7 L 360.2,242.5 L 362.8,241.4 L 367.3,243.8 L 370.2,243.3 L 371.2,240.4 L 372.5,236.6 L 376.1,234.0 L 379.9,231.9 L 380.9,232.5 L 378.0,234.7 L 378.8,236.8 L 379.2,240.0 L 379.5,245.4 L 381.5,246.3 L 380.9,249.5 L 380.8,251.9 L 383.4,252.2 L 385.9,257.1 L 387.6,261.1 L 384.4,263.9 L 380.7,265.4 L 381.0,270.1 L 384.9,271.3 L 384.1,275.2 L 384.7,277.1 L 387.9,277.1 L 389.9,279.0 L 392.2,279.0 L 395.5,280.7 L 396.8,281.3 L 396.4,277.8 L 401.8,268.2 L 406.4,271.3 L 408.1,273.0 L 410.4,271.0 L 413.9,271.5 L 414.9,267.4 L 418.2,265.8 L 423.1,263.9 L 424.0,268.6 L 427.8,268.7 L 430.3,271.2 L 426.5,276.9 L 428.9,280.9 L 428.4,285.8 L 430.9,286.4 L 432.7,284.3 L 435.0,286.3 L 432.7,290.8 L 430.7,293.9 L 430.9,296.6 L 428.1,299.2 L 429.8,300.7 L 428.9,301.6 L 426.9,305.0 L 424.0,305.7 L 417.1,305.2 L 409.6,303.8 L 404.4,300.9 L 402.9,302.4 L 401.2,303.1 L 400.3,306.0 L 398.6,307.4 L 394.3,311.5 L 390.4,313.4 L 387.6,313.4 L 383.2,313.9 L 380.1,315.6 L 376.7,318.9 L 373.4,321.6 L 369.5,324.0 L 367.9,326.1 L 365.2,328.5 L 358.7,331.9 L 355.4,333.1 L 353.7,335.7 L 351.5,334.3 L 351.8,339.6 L 348.9,340.1 L 343.8,342.9 L 339.3,346.1 L 340.7,350.9 L 340.7,367.3 Z" class="region-path" data-region="souss-massa" />
+
+<!-- Tanger-Tetouan-Hoceima -->
+<path id="region-tanger-tetouan" d="M 534.9,50.4 L 527.8,52.5 L 520.9,57.4 L 518.0,55.0 L 510.3,60.4 L 500.3,58.7 L 496.9,52.4 L 489.6,55.2 L 483.6,55.0 L 480.3,67.0 L 476.9,70.2 L 473.0,67.1 L 471.3,63.1 L 466.1,59.5 L 460.4,59.8 L 458.0,54.7 L 459.4,49.9 L 456.3,47.9 L 449.0,45.6 L 439.0,44.6 L 440.2,41.2 L 444.1,30.1 L 448.0,21.5 L 448.3,18.4 L 451.4,6.8 L 452.8,6.5 L 456.7,6.7 L 458.6,5.5 L 460.8,4.6 L 463.8,4.9 L 465.3,4.4 L 467.5,2.9 L 469.5,0.4 L 472.5,0.0 L 477.3,0.7 L 476.1,1.3 L 475.2,4.3 L 475.4,8.0 L 478.2,11.5 L 478.5,15.6 L 480.5,18.1 L 483.0,19.1 L 486.5,24.0 L 492.8,29.1 L 499.4,34.1 L 504.5,36.6 L 508.7,36.9 L 511.8,37.6 L 514.9,37.8 L 519.1,36.4 L 527.5,34.5 L 531.8,33.3 L 534.1,35.5 L 535.8,35.9 L 534.9,50.4 Z" class="region-path" data-region="tanger-tetouan" />
+
+
+                                </g>
+                                
+                                <!-- Connecting lines (stylized overlay) -->
+                                <path d="M 456.2,8.5 L 474.1,17.0 L 478.1,37.8 L 424.0,90.0 L 410.0,96.0 L 384.3,115.9 L 368.5,209.2 L 411.3,242.8 M 368.5,209.2 L 303.1,266.2 L 284.2,333.1 L 157.5,418.1 L 47.1,572.1" class="map-connection-line" />
+                                
+                                <!-- Interactive City Markers -->
+                                <g class="map-markers">
+                                                                        <!-- Tanger -->
+                                    <g class="city-node" data-city="tanger" transform="translate(456.2, 8.5)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Tetouan -->
+                                    <g class="city-node" data-city="tetouan" transform="translate(474.1, 17.0)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Chefchaouen -->
+                                    <g class="city-node" data-city="chefchaouen" transform="translate(478.1, 37.8)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Rabat -->
+                                    <g class="city-node" data-city="rabat" transform="translate(410.0, 96.0)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Sale -->
+                                    <g class="city-node" data-city="sale" transform="translate(424.0, 90.0)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Casablanca -->
+                                    <g class="city-node" data-city="casablanca" transform="translate(384.3, 115.9)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Marrakech -->
+                                    <g class="city-node" data-city="marrakech" transform="translate(368.5, 209.2)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Ouarzazate -->
+                                    <g class="city-node" data-city="ouarzazate" transform="translate(411.3, 242.8)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Agadir -->
+                                    <g class="city-node" data-city="agadir" transform="translate(303.1, 266.2)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Guelmim -->
+                                    <g class="city-node" data-city="guelmim" transform="translate(284.2, 333.1)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Laayoune -->
+                                    <g class="city-node" data-city="laayoune" transform="translate(157.5, 418.1)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                                                        <!-- Dakhla -->
+                                    <g class="city-node" data-city="dakhla" transform="translate(47.1, 572.1)">
+                                        <circle class="node-hitbox" r="22" fill="transparent" style="cursor: pointer; pointer-events: all;" />
+                                        <circle class="node-pulse" r="14" />
+                                        <circle class="node-dot" r="6" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Floating Preview Tooltip Card -->
+            <div id="map-tooltip" class="map-tooltip-card">
+                <div class="tooltip-arrow"></div>
+                <div class="tooltip-content-wrapper">
+                    <h5 class="tooltip-title" id="tooltip-title">Tanger</h5>
+                    <p class="tooltip-desc" id="tooltip-desc">La Mariée du Nord, ville cosmopolite entre Méditerranée et Atlantique.</p>
+                    <a href="#" class="btn btn-gold btn-sm w-100 mt-2" id="tooltip-link">
+                        <span data-i18n="map_explore">Découvrir</span> <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESTINATIONS GRID -->
+    <section id="destinations" class="destinations-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_destinations">Les Joyaux du Royaume</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_destinations">Découvrez les 12 épicentres du patrimoine marocain.</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Tanger -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="destination-card">
+                        <img src="../tangerImages/img_6.webp" class="card-img-top" alt="Tanger">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_tanger">Tanger</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_tanger">La Mariée du Nord, ville cosmopolite entre Méditerranée et Atlantique.</span></p>
+                            <a href="tanger.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tetouan -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="destination-card">
+                        <img src="../tetouanImages/img_2.jpg" class="card-img-top" alt="Tetouan">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_tetouan">Tetouan</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_tetouan">La Colombe Blanche. Une ville à l'influence andalouse profonde.</span></p>
+                            <a href="tetouan.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Chefchaouen -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="destination-card">
+                        <img src="../chefchaouenImages/img_2.jpg" class="card-img-top" alt="Chefchaouen">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_chefchaouen">Chefchaouen</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_chefchaouen">La Perle Bleue du Maroc. Célèbre pour les façades bleutées de sa médina.</span></p>
+                            <a href="chefchaouen.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Rabat -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="destination-card">
+                        <img src="../rabatImages/img_2.jpg" class="card-img-top" alt="Rabat">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_rabat">Rabat</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_rabat">La capitale lumière et impériale, classée au patrimoine de l'UNESCO.</span></p>
+                            <a href="rabat.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Salé -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="destination-card">
+                        <img src="../saleImages/img_3.jpg" class="card-img-top" alt="Salé">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_sale">Salé</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_sale">L'authentique cité corsaire posée sur la rive droite du Bouregreg.</span></p>
+                            <a href="sale.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Casablanca -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="destination-card">
+                        <img src="../casaImages/img_3.png" alt="Casablanca" class="card-img-top" onerror="this.src='../casaImages/image.png';">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_casablanca">Casablanca</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_casablanca">Le poumon économique, avec son architecture Art Déco et la Mosquée Hassan II.</span></p>
+                            <a href="casablanca.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Marrakech -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="destination-card">
+                        <img src="../marakkechImages/img_5.jpg" alt="Marrakech" class="card-img-top" onerror="this.src='../marakkechImages/Mosquée de la Koutoubia.jpg';">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_marrakech">Marrakech</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_marrakech">La Ville Ocre. Une effervescence unique entre souks et palais historiques.</span></p>
+                            <a href="marrakech.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ouarzazate -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="destination-card">
+                        <img src="../ouarzazateImages/img_2.jpg" alt="Ouarzazate" class="card-img-top" onerror="this.src='../ouarzazateImages/ait bnhdo.jpg';">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_ouarzazate">Ouarzazate</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_ouarzazate">La Porte du Désert et le paradis des superproductions cinématographiques.</span></p>
+                            <a href="ouarzazate.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Agadir -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="destination-card">
+                        <img src="../agadirImages/img_2.jpg" class="card-img-top" alt="Agadir">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_agadir">Agadir</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_agadir">La station balnéaire moderne offrant 300 jours de soleil par an.</span></p>
+                            <a href="agadir.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Guelmim -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="destination-card">
+                        <img src="../guelmimImages/img_4.jpg" class="card-img-top" alt="Guelmim">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_guelmim">Guelmim</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_guelmim">La véritable Porte du Sahara, célèbre pour ses oasis et ses marchés.</span></p>
+                            <a href="guelmim.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Laâyoune -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="destination-card">
+                        <img src="../laayouneImages/2.webp" class="card-img-top" alt="Laâyoune">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_laayoune">Laâyoune</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_laayoune">La Capitale des Sables. Une métropole fascinante alliant modernité et tradition.</span></p>
+                            <a href="laayoune.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dakhla -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="destination-card">
+                        <img src="../dakhlaImages/img_1.jpg" class="card-img-top" alt="Dakhla">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="city_dakhla">Dakhla</h5>
+                            <p class="card-text text-muted small"><span data-i18n="desc_dakhla">La perle du Sud. Un lagon exceptionnel où le désert rencontre l'océan.</span></p>
+                            <a href="dakhla.html" class="btn btn-gold" data-i18n="btn_decouvrir">Découvrir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section" style="background-image: url('../indexImages/bg_10.jpg');">
+        <div class="container contact-content">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="contact-card text-reveal">
+                        <h3 class="text-center mb-4" style="font-family: var(--font-display); color: var(--color-gold);" data-i18n="form_title">
+                            <i class="fas fa-compass"></i> Commencez Votre Voyage
+                        </h3>
+                        <form id="contactForm">
+                            <div class="mb-4">
+                                <label class="form-label" data-i18n="form_name">Nom complet</label>
+                                <input type="text" class="form-control" placeholder="Entrez votre nom et prénom" data-i18n-placeholder="form_name_placeholder" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label" data-i18n="form_destination">Destination favorite</label>
+                                <select class="form-select">
+                                    <option data-i18n="form_choose">Choisir une ville...</option>
+                                    <option>Tanger</option>
+                                    <option>Marrakech</option>
+                                    <option>Dakhla</option>
+                                    <option>Chefchaouen</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-gold w-100" style="padding: 15px; font-weight: bold; font-size: 1rem;" data-i18n="form_submit">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder" data-city="MAROC MAGIQUE" data-tagline="Découvrez la beauté, la culture et la majesté du Royaume."></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/translations/common.js"></script>
+    <script src="../js/translations/index.js"></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez Rabat, l'un des joyaux du patrimoine marocain.">
+    <title>Rabat | Capitale des Lumières</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image: url('../rabatImages/bg_12.jpg');"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle" data-i18n="title">Rabat</h1>
+            <p class="hero-subtitle" id="heroSubtitle" data-i18n="hero_subtitle">La Ville Lumière, Capitale Marocaine de la Culture</p>
+        </div>
+    </section>
+
+    <!-- PRESENTATION SECTION -->
+    <section id="histoire" class="intro-section">
+        <div class="container">
+            <div class="intro-card text-reveal">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="intro-title" data-i18n="intro_title">L'Élégance Impériale</h2>
+                        <div class="intro-text" data-i18n-html="intro_text">
+                            <p class='intro-text'><strong>Rabat</strong> (en amazighe : ⴰⵕⴱⴰⵟ) est la capitale du Maroc, située au bord de l'océan Atlantique et sur la rive gauche de l'embouchure du fleuve Bouregreg. Fondée en 1150 par le calife almohade Abd al-Mumin, elle devait servir de camp de base (<em>Ribat</em>) pour les expéditions en Espagne.</p><p class='intro-text'>Devenue capitale sous le protectorat français en 1912, puis confirmée à l'indépendance en 1956, Rabat est une ville où se mêlent harmonieusement héritage arabo-musulman et modernisme occidental. En 2012, l'ensemble de sa ville nouvelle et de ses quartiers anciens a été inscrit au patrimoine mondial de l'<strong>UNESCO</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                        <img src="../rabatImages/img_1.jpg" alt="Kasbah des Oudayas" class="img-fluid intro-image">
+                        <p class='small text-muted mt-2'>Vue majestueuse sur la Kasbah des Oudayas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIEUX SECTION -->
+    <section id="lieux" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_lieux">Lieux Incontournables</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_lieux">Explorez les merveilles emblématiques de Rabat.</p>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-6 col-md-12 fade-up">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_2.jpg" class="card-img-top" alt="Mausolée Mohammed V et Tour Hassan">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_0">Tour Hassan & Mausolée Mohammed V</h4>
+                            <p class="card-text" data-i18n="lieux_desc_0">L'emblème de Rabat. La Tour Hassan est le minaret inachevé d'une immense mosquée du XIIe siècle. Juste en face se dresse le Mausolée Mohammed V, chef-d'œuvre de l'artisanat marocain moderne en marbre blanc, abritant les tombes des rois Mohammed V et Hassan II.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Tour+Hassan+%26+Mausol%C3%A9e+Mohammed+V+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_3.jpg" class="card-img-top" alt="Kasbah des Oudayas">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_1">Kasbah des Oudayas</h4>
+                            <p class="card-text" data-i18n="lieux_desc_1">Ancien camp militaire almohade perché sur une falaise dominant l'océan. C'est aujourd'hui une "ville dans la ville" aux charmantes ruelles peintes en bleu et blanc, célèbre pour son magnifique jardin andalou et le légendaire Café Maure.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Kasbah+des+Oudayas+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_4.jpg" class="card-img-top" alt="Nécropole du Chellah">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_2">La Nécropole du Chellah</h4>
+                            <p class="card-text" data-i18n="lieux_desc_2">L'un des sites les plus romantiques du Maroc. Derrière ses hautes murailles se côtoient les ruines de l'antique cité romaine de Sala Colonia et une nécropole mérinide du XIVe siècle, aujourd'hui domaine des cigognes et d'une végétation luxuriante.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=La+N%C3%A9cropole+du+Chellah+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.0s;">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_5.webp" class="card-img-top" alt="Palais Royal de Rabat">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_3">Palais Royal (Dar al-Makhzen)</h4>
+                            <p class="card-text" data-i18n="lieux_desc_3">Siège du gouvernement et résidence officielle du Roi. Bien que l'intérieur ne se visite pas, l'immense esplanade (le Méchouar) et les portes monumentales richement décorées du palais offrent une promenade imposante au cœur du pouvoir.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Palais+Royal+%28Dar+al-Makhzen%29+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOTELS SECTION -->
+    <section id="hotels" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_hotels">Où Dormir ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_hotels">Sélection d'établissements prestigieux pour votre séjour.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_6.jpg" class="card-img-top" alt="La Tour Hassan Palace">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_0">La Tour Hassan Palace</h4>
+                                <p class="card-text" data-i18n="hotels_desc_0">Bâti en 1912, c'est l'hôtel historique et le plus prestigieux de la capitale. Situé en centre-ville, il est l'incarnation de l'art de vivre marocain avec ses salons andalous, ses jardins majestueux et son service digne des chefs d'État.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=La+Tour+Hassan+Palace+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_7.jpg" class="card-img-top" alt="Sofitel Jardin des Roses">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_1">Sofitel Rabat Jardin des Roses</h4>
+                                <p class="card-text" data-i18n="hotels_desc_1">Niché au cœur du prestigieux quartier de l'Agdal, ce resort de luxe porte bien son nom. Entouré par un magnifique jardin andalou de plusieurs hectares abritant 3000 roses, c'est une oasis de fraîcheur au cœur de la ville.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Sofitel+Rabat+Jardin+des+Roses+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_8.jpg" class="card-img-top" alt="Villa Diyafa">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_2">Villa Diyafa Boutique Hotel</h4>
+                                <p class="card-text" data-i18n="hotels_desc_2">Situé dans le quartier ultra-chic des Ambassadeurs, ce boutique-hôtel s'inspire de la vie de Zyriab, le maître de l'élégance andalouse. Il offre un luxe très intimiste, des suites gigantesques et une architecture contemporaine épurée.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Villa+Diyafa+Boutique+Hotel+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESTAURANTS SECTION -->
+    <section id="restaurants" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_restaurants">Où Manger ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_restaurants">Découvrez la richesse culinaire et les tables mythiques de Rabat.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_9.jpg" class="card-img-top" alt="Restaurant Le Dinarjat">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_0">Le Dinarjat</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_0">Caché dans la vieille médina de Rabat (une personne vient vous chercher avec une lanterne pour vous y mener), cette somptueuse demeure hispano-mauresque propose la plus pure et la plus élégante gastronomie marocaine de la capitale.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Le+Dinarjat+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_10.jpg" class="card-img-top" alt="Dar Zaki">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_1">Dar Zaki</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_1">Un excellent restaurant traditionnel situé en plein cœur de la médina. Le cadre y est très authentique et les plats (pastillas aux fruits de mer, tajines aux pruneaux, couscous) sont préparés avec un immense soin, rappelant les recettes familiales.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Dar+Zaki+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../rabatImages/img_11.jpg" class="card-img-top" alt="Chhiwates du Terroir">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_2">Chhiwates du Terroir</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_2">Situé dans le quartier chic de l'Agdal, ce restaurant est devenu célèbre pour sa réinvention de la street-food marocaine et de la cuisine rurale dans un cadre moderne et très "cosy". Les ingrédients sont tous issus de coopératives bio marocaines.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Chhiwates+du+Terroir+Rabat+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder" data-city="Rabat" data-tagline="Capitale du Royaume"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/translations/common.js"></script>
+    <script src="../js/translations/rabat.js"></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>

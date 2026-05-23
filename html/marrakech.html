@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez Marrakech, l'un des joyaux du patrimoine marocain.">
+    <title>Marrakech | La Ville Rouge</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Plus+Jakarta+Sans:wght@300;400;600&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70">
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-bg" id="heroBg" aria-hidden="true" style="background-image: url('../marakkechImages/Jardin Majorelle.webp');"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle" data-i18n="title">Marrakech</h1>
+            <p class="hero-subtitle" id="heroSubtitle" data-i18n="hero_subtitle">La Ville Rouge et le Cœur Palpitant du Maroc</p>
+        </div>
+    </section>
+
+    <!-- PRESENTATION SECTION -->
+    <section id="histoire" class="intro-section">
+        <div class="container">
+            <div class="intro-card text-reveal">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="intro-title" data-i18n="intro_title">L'ancienne Cité Impériale</h2>
+                        <div class="intro-text" data-i18n-html="intro_text">
+                            <p class='intro-text'><strong>Marrakech</strong> (en amazighe : ⴰⵎⵓⵔⴰⴽⵓⵛ) est une ville située dans le centre du Maroc, au pied des montagnes de l'Atlas. Surnommée la <em>« Ville rouge »</em> ou la <em>« Ville ocre »</em> en raison de la couleur de ses remparts historiques.</p><p class='intro-text'>Fondée en <strong>1071</strong> par Youssef ben Tachfine, à la tête de la dynastie des Almoravides, Marrakech est l'une des villes impériales du Maroc. Elle a donné son nom au pays tout entier. Aujourd'hui, sa médina (vieille ville) est inscrite au patrimoine mondial de l'UNESCO et attire des millions de visiteurs fascinés par ses souks vibrants, ses palais et ses riads.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                        <img src="../marakkechImages/Mosquée de la Koutoubia.jpg" alt="Remparts de Marrakech" class="img-fluid intro-image">
+                        <p class='small text-muted mt-2'>Les célèbres remparts ocre de la ville</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIEUX SECTION -->
+    <section id="lieux" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_lieux">Lieux Incontournables</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_lieux">Explorez les merveilles emblématiques de Marrakech.</p>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-lg-6 col-md-12 fade-up">
+                    <div class="info-card">
+                        <img src="../marakkechImages/place-jeema-el-fna-nuit.png" class="card-img-top" alt="Place Jemaa el-Fna">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_0">Place Jemaa el-Fna</h4>
+                            <p class="card-text" data-i18n="lieux_desc_0">Le cœur battant de Marrakech. Charmeurs de serpents, musiciens Gnaouas, conteurs et stands de nourriture transforment cette immense place, classée au patrimoine culturel immatériel par l'UNESCO, en un spectacle permanent du matin jusqu'à tard la nuit.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Place+Jemaa+el-Fna+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../marakkechImages/Mosquée de la Koutoubia.jpg" class="card-img-top" alt="Mosquée de la Koutoubia">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_1">Mosquée de la Koutoubia</h4>
+                            <p class="card-text" data-i18n="lieux_desc_1">Bâtie au XIIe siècle sous la dynastie des Almohades, son minaret de 77 mètres de haut est le point de repère de la ville. Son architecture a inspiré la Giralda de Séville et la Tour Hassan de Rabat.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Mosqu%C3%A9e+de+la+Koutoubia+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../marakkechImages/Jardin Majorelle.webp" class="card-img-top" alt="Jardin Majorelle">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_2">Jardin Majorelle</h4>
+                            <p class="card-text" data-i18n="lieux_desc_2">Un jardin botanique luxuriant créé par le peintre français Jacques Majorelle en 1931, racheté plus tard par Yves Saint Laurent. Il est célèbre pour son "bleu Majorelle" intense et abrite aujourd'hui le musée d'art berbère.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Jardin+Majorelle+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 fade-up" style="transition-delay: 0.0s;">
+                    <div class="info-card">
+                        <img src="../marakkechImages/Palais de la Bahia.avif" class="card-img-top" alt="Palais de la Bahia">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="lieux_title_3">Palais de la Bahia</h4>
+                            <p class="card-text" data-i18n="lieux_desc_3">Construit à la fin du XIXe siècle, ce palais de 8 hectares est un chef-d'œuvre de l'architecture marocaine avec ses plafonds peints, ses zelliges, ses cours andalouses et ses somptueux jardins intérieurs.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Palais+de+la+Bahia+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOTELS SECTION -->
+    <section id="hotels" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_hotels">Où Dormir ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_hotels">Sélection d'établissements prestigieux pour votre séjour.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="info-card">
+                        <img src="../marakkechImages/La Mamounia.jpeg" class="card-img-top" alt="La Mamounia">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_0">La Mamounia</h4>
+                                <p class="card-text" data-i18n="hotels_desc_0">Véritable mythe international depuis 1923, ce palace a accueilli Winston Churchill, Alfred Hitchcock ou encore Charlie Chaplin. Niché dans de vastes jardins royaux, c'est l'incarnation de l'élégance marocaine.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=La+Mamounia+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../marakkechImages/Le Royal Mansour.webp" class="card-img-top" alt="Royal Mansour">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_1">Le Royal Mansour</h4>
+                                <p class="card-text" data-i18n="hotels_desc_1">Il n'y a pas de chambres ou de suites au Royal Mansour, seulement des riads privés exclusifs. Construit à la demande du Roi Mohammed VI, il illustre l'excellence absolue de l'artisanat d'art marocain.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Le+Royal+Mansour+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../marakkechImages/Atlas-view-BD.jpg" class="card-img-top" alt="Selman Marrakech">
+                        <div class="card-body">
+                            <div>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    
+                                </div>
+                                <h4 class="card-title" data-i18n="hotels_title_2">Le Selman Marrakech</h4>
+                                <p class="card-text" data-i18n="hotels_desc_2">Situé au pied de l'Atlas, cet hôtel majestueux conçu par Jacques Garcia se distingue par son atmosphère andalouse et, surtout, par ses haras abritant des chevaux pur-sang arabes primés qui se baladent dans les jardins.</p>
+                            </div>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Le+Selman+Marrakech+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESTAURANTS SECTION -->
+    <section id="restaurants" class="content-section">
+        <div class="container">
+            <div class="section-header text-reveal">
+                <h2 data-i18n="title_restaurants">Où Manger ?</h2>
+                <div class="divider"></div>
+                <p class="text-muted" data-i18n="subtitle_restaurants">Découvrez la richesse culinaire et les tables mythiques de Marrakech.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="info-card">
+                        <img src="../marakkechImages/Dar Yacout.jpg" class="card-img-top" alt="Dar Yacout">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_0">Dar Yacout</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_0">Situé au cœur de la médina, Dar Yacout est une véritable institution gastronomique. Dans un décor digne des mille et une nuits, on y sert l'un des meilleurs dîners traditionnels (méchoui, pastillas) avec des musiciens andalous en arrière-plan.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Dar+Yacout+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.1s;">
+                    <div class="info-card">
+                        <img src="../marakkechImages/nomad.jpg" class="card-img-top" alt="Nomad Marrakech">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_1">Nomad</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_1">Un incontournable moderne. Surplombant la fameuse place des Épices, le rooftop du Nomad offre une vue spectaculaire. La carte propose une "cuisine marocaine moderne", légère et très inventive (burgers d'agneau revisités, pastillas végétariennes).</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Nomad+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay: 0.2s;">
+                    <div class="info-card">
+                        <img src="../marakkechImages/Le Jardin.jpg" class="card-img-top" alt="Le Jardin">
+                        <div class="card-body">
+                            <h4 class="card-title" data-i18n="restaurants_title_2">Le Jardin</h4>
+                            <p class="card-text" data-i18n="restaurants_desc_2">Caché dans les ruelles labyrinthiques de la médina, ce restaurant porte bien son nom. C'est une oasis verdoyante de fraîcheur au style années 60 marocain, offrant des plats sains, des salades rafraîchissantes et d'excellents tajines.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Le+Jardin+Marrakech+Maroc" target="_blank" class="btn-maps" data-i18n="btn_localiser"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>Localiser</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder" data-city="Marrakech" data-tagline="la magie de l'Ocre"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/translations/common.js"></script>
+    <script src="../js/translations/marrakech.js"></script>
+    <script src="../js/main.js" defer></script>
+</body>
+</html>
